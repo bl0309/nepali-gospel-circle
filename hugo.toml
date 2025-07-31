@@ -1,0 +1,56 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Nepali Gospel Circle"
+theme = "hugo-serif-theme"
+
+[params]
+  description = "A Christ-centered church in Irving, TX"
+  tagline = "Worship. Connect. Serve."
+
+[params.logo]
+  desktop = "images/ngc_name_black.png"
+  desktop_height = "40"
+  mobile = "images/ngc_name_black.png"
+  mobile_height = "40"
+  alt = "Nepali Gospel Circle"
+
+[params.homepage]
+  sticky_header = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 2
+
+  [[menu.main]]
+    name = "Ministries"
+    url = "/ministries"
+    weight = 3
+
+  [[menu.main]]
+    name = "Activities"
+    url = "/activities"
+    weight = 4
+
+  [[menu.main]]
+    name = "Messages"
+    url = "/sermons"
+    weight = 5
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact"
+    weight = 6
+
