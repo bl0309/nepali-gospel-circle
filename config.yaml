@@ -1,0 +1,64 @@
+baseURL: 'https://www.nepaligospelcircle.com/'
+languageCode: 'en-us'
+title: 'Nepali Gospel Circle'
+
+params:
+  description: 'A vibrant community of faith where Nepali speaking believers come together to worship, grow, and serve God with joyful hearts.'
+  author: 'Nepali Gospel Circle'
+
+  # YouTube Channel
+  youtube_channel: "https://www.youtube.com/@NepaliGospelCircle/streams"
+  
+  # Church Information
+  church:
+    name: "Nepali Gospel Circle"
+    phone: "(972) 670-7183"
+    email: "ngospelc@gmail.com"
+    address: 
+      street: "4401 N State Highway 161"
+      city: "Irving"
+      state: "Texas"
+      zip: "75038"
+      country: "United States"
+  
+  # Service Times
+  services:
+    sunday_worship: "1:00 PM"
+    youth_group: "Thursday 6:00 PM"
+    home_gather: "Saturday 6:00 PM"
+  
+  # Social Media
+  social:
+    facebook: "https://www.facebook.com/nepaligospelcircle"
+    instagram: "#"
+    youtube: "https://www.youtube.com/@NepaliGospelCircle"
+    twitter: "#"
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 10
+    - name: "About" 
+      url: "/#about"
+      weight: 20
+    - name: "Services"
+      url: "/#services" 
+      weight: 30
+    - name: "Messages"
+      url: "/#messages"
+      weight: 40
+    - name: "Events"
+      url: "/#events"
+      weight: 50
+    - name: "Meet Us"
+      url: "/#leadership"
+      weight: 60
+    - name: "Contact"
+      url: "/#contact"
+      weight: 70
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

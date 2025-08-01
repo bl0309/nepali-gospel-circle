@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.css",
-	"sourceRoot": "/Users/vikramlamsal/Desktop/NGC_Website_Project/source/nepali-gospel-circle",
+	"sourceRoot": "/Users/vikramlamsal/Desktop/NGC_Website_Project/nepali-gospel-circle",
 	"sources": [
 		"themes/hugo-serif-theme/assets/scss/style.scss",
 		"themes/hugo-serif-theme/assets/scss/_variables.scss",

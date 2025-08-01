@@ -1,0 +1,17 @@
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="{{ .Site.BaseURL }}" class="logo">
+            <img src="/images/logo_home.png" alt="{{ .Site.Title }}" style="height: 50px;">
+        </a>
+        <ul class="nav-menu">
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+        <div class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>

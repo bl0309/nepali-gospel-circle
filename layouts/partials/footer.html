@@ -1,0 +1,19 @@
+<footer class="footer">
+    <div class="container">
+        <a href="{{ .Site.BaseURL }}" class="footer-links">
+            <img src="/images/ngc_white.png" alt="{{ .Site.Title }}" style="height: 60px;">
+        </a>
+        <div class="footer-links">
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+        </div>
+        <!-- <div class="social-links">
+            <a href="{{ .Site.Params.social.facebook }}"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{ .Site.Params.social.instagram }}"><i class="fab fa-instagram"></i></a>
+            <a href="{{ .Site.Params.social.youtube }}"><i class="fab fa-youtube"></i></a>
+            <a href="{{ .Site.Params.social.twitter }}"><i class="fab fa-twitter"></i></a>
+        </div> -->
+        <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved. Built with love for our community.</p>
+    </div>
+</footer>

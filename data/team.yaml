@@ -1,0 +1,15 @@
+team:
+  - name: "Ps. Rajendra and Ruby Thapa"
+    title: "Lead Pastors"
+    image: "/images/leaders/lead_pastor.jpg"
+    description: "Greetings in the name of our Lord Jesus Christ! At Nepali Gospel Circle, we are passionate about building a Christ-centered community that reflects God’s love and truth. My heart is to see each person grow in their personal relationship with Jesus, be rooted in the Word, empowered by the Holy Spirit, and walk in love and service. Whether you're new to faith or seeking a deeper walk, you are welcome here, this is a place where you belong. WELCOME HOME"
+
+  - name: "Ps. Armando and Rose Escobedo"
+    title: "Asst. Pastors"
+    image: "/images/leaders/asst_pastor.jpg"
+    description: "We count it a joy and privilege to serve alongside our Lead Pastor and elders in caring for the spiritual growth of our church family. Our calling as assistant pastors is to shepherd, disciple, and walk with you through every season of life, whether it’s through teaching, prayer, youth leadership, or family support. We are here to encourage your journey of faith, and we believe that God has great things in store for your life and calling. Let us grow together in grace, truth, and love."
+
+  - name: "Meet Out Elders"
+    title: "Elders"
+    image: "/images/leaders/elders.jpg"
+    description: "Our elders are faithful servants who support the vision of the church through prayer, teaching, leadership, and care for the body of Christ. Together, we are committed to equipping the saints, nurturing spiritual growth, and encouraging every member to live out the Gospel in daily life."

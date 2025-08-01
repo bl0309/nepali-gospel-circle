@@ -1,0 +1,24 @@
+features:
+  - icon: "fas fa-bible"
+    title: "Biblical Teaching"
+    description: "We believe in the power of God's Word and provide expository preaching that helps believers grow in their understanding of Scripture."
+  
+  - icon: "fas fa-hands-praying"
+    title: "Prayer & Worship"
+    description: "Our worship services blend traditional Nepali music with contemporary praise, creating a heartfelt atmosphere of worship."
+  
+  - icon: "fas fa-users"
+    title: "Community Fellowship"
+    description: "We foster deep relationships through small groups, cultural events, and community service projects."
+  
+  - icon: "fas fa-seedling"
+    title: "Spiritual Growth"
+    description: "Through discipleship programs and mentoring, we help each member develop their relationship with Christ."
+  
+  - icon: "fas fa-heart"
+    title: "Community Service"
+    description: "We actively serve our local community through outreach programs, food drives, and support for those in need."
+  
+  - icon: "fas fa-globe-asia"
+    title: "Cultural Heritage"
+    description: "We celebrate our Nepali heritage while embracing our identity as followers of Christ in our new homeland."

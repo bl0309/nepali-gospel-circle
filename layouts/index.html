@@ -1,0 +1,222 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h2>Join us this</h2>
+        <h1>SUNDAY</h1>
+        <h1>1 PM</h1>
+        <p>{{ .Site.Params.description }}</p>
+        <div class="cta-buttons">
+            <a href="#services" class="btn btn-primary">
+                <i class="fas fa-play"></i>
+                Join Worship
+            </a>
+            <a href="#about" class="btn btn-secondary">
+                <i class="fas fa-heart"></i>
+                Learn More
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Our Ministry</h2>
+            <p>We are a loving community of Nepali believers dedicated to growing in faith, fellowship, and service to
+                our Lord Jesus Christ.</p>
+        </div>
+        <div class="about-grid">
+            {{ range .Site.Data.about.features }}
+            <div class="about-card fade-in">
+                <i class="{{ .icon }}"></i>
+                <h3>{{ .title }}</h3>
+                <p>{{ .description }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Worship Services & Programs</h2>
+            <p>Join us for meaningful worship experiences and programs designed to strengthen our faith community.</p>
+        </div>
+        <div class="services-grid">
+            {{ range .Site.Data.services.programs }}
+            <div class="service-card fade-in">
+                <div class="service-image" style="background-image: url('{{ .image }}');"></div>
+                <div class="service-content">
+                    <div class="service-time">{{ .time }}</div>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Messages Section -->
+<section class="messages" id="messages">
+    <div class="container">
+        <div class="section-header">
+            <h2>Recent Messages</h2>
+            <p>Watch our latest sermons and teachings that inspire and strengthen our faith journey.</p>
+        </div>
+        <div class="messages-grid">
+            {{ range .Site.Data.messages.recent }}
+            <div class="message-card fade-in" data-video-id="{{ .youtube_id }}">
+                <div class="message-thumbnail">
+                    <img src="https://img.youtube.com/vi/{{ .youtube_id }}/maxresdefault.jpg" alt="{{ .title }}"
+                        loading="lazy">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="message-duration">{{ .duration }}</div>
+                </div>
+                <div class="message-content">
+                    <div class="message-date">{{ .date }}</div>
+                    <h3>{{ .title }}</h3>
+                    <p class="message-speaker">
+                        <i class="fas fa-user"></i>
+                        {{ .speaker }}
+                    </p>
+                    <p class="message-description">{{ .description }}</p>
+                    <div class="message-tags">
+                        {{ range .tags }}
+                        <span class="tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <div class="messages-cta">
+            <a href="{{ .Site.Params.youtube_channel }}" class="btn btn-primary" target="_blank">
+                <i class="fab fa-youtube"></i>
+                View All Messages
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section class="events" id="events">
+    <div class="container">
+        <div class="section-header">
+            <h2>Upcoming Events</h2>
+            <p>Stay connected with our community through these upcoming events and activities.</p>
+        </div>
+        <div class="events-container">
+            <div class="events-list">
+                {{ range .Site.Data.events.upcoming }}
+                <div class="event-item fade-in">
+                    <div class="event-date">{{ .date }}</div>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leadership Section -->
+<div class="leadership" id="leadership">
+    <div class="container">
+        <div class="section-header">
+            <h2>Meet Our Pastors & Elders</h2>
+            <p>Get to know the dedicated leaders who shepherd, teach, and care for our church family. Our pastors and
+                elders are committed to guiding us in faith, prayer, and service as we grow together in Christ.</p>
+        </div>
+        <div class="leadership-grid">
+            {{ range first 2 .Site.Data.team.team }}
+            <div class="team-card fade-in">
+                <img src="{{ .image }}" alt="{{ .name }}" class="team-photo">
+                <h3>{{ .name }}</h3>
+                <p class="team-title">{{ .title }}</p>
+                <p>{{ .description }}</p>
+            </div>
+            {{ end }}
+        </div>
+
+        <!-- Elders Full Width Card -->
+        {{ $elders := index .Site.Data.team.team 2 }}
+        <div class="elder-card fade-in">
+            <img src="{{ $elders.image }}" alt="{{ $elders.name }}" class="elder-photo">
+            <div class="elder-content">
+                <h3>{{ $elders.name }}</h3>
+                <p class="team-title">{{ $elders.title }}</p>
+                <p>{{ $elders.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2 style="color: white;">Get In Touch</h2>
+            <p style="color: rgba(255,255,255,0.8);">We'd love to hear from you and welcome you into our church family.
+            </p>
+        </div>
+        <div class="contact-grid">
+            <div class="fade-in">
+                <h3>Visit Us</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>{{ .Site.Params.church.name }}</strong><br>
+                        {{ .Site.Params.church.address.street }}<br>
+                        {{ .Site.Params.church.address.city }}, {{ .Site.Params.church.address.state }} {{
+                        .Site.Params.church.address.zip }}
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Service Times</strong><br>
+                        Sunday Service: {{ .Site.Params.services.sunday_worship }}<br>
+                        Youth Meet: {{ .Site.Params.services.youth_group }}
+                        Home Fellowship: {{ .Site.Params.services.home_gather }}
+                    </div>
+                </div>
+            </div>
+            <div class="fade-in">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Phone</strong><br>
+                        {{ .Site.Params.church.phone }}
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        {{ .Site.Params.church.email }}
+                    </div>
+                </div>
+            </div>
+            <div class="fade-in">
+                <h3>Connect With Us</h3>
+                <p style="margin-bottom: 2rem;">Follow us on social media to stay updated with our latest events and
+                    messages.</p>
+                <div class="social-links">
+                    <a href="{{ .Site.Params.social.facebook }}"><i class="fab fa-facebook-f"></i></a>
+                    <a href="{{ .Site.Params.social.instagram }}"><i class="fab fa-instagram"></i></a>
+                    <a href="{{ .Site.Params.social.youtube }}"><i class="fab fa-youtube"></i></a>
+                    <a href="{{ .Site.Params.social.twitter }}"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

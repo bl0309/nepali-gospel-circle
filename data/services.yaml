@@ -1,0 +1,30 @@
+programs:
+  - image: "/images/services/worship.jpg"
+    time: "Sunday 1:00 PM"
+    title: "Sunday Worship Experience"
+    description: "Join us for our main worship service featuring contemporary praise, expository preaching, and fellowship in both Nepali and English."
+  
+  - image: "/images/services/youth.jpg"
+    time: "Every other Thursday 6:00 PM"
+    title: "Young/Adults Bible Study"
+    description: "A time of focused prayer, Bible study, spiritual encouragement, and Fun games as we support one another in our faith journey."
+  
+  - image: "/images/services/kids.jpg"
+    time: "Sunday 2:00 PM"
+    title: "Children's Ministry"
+    description: "Age-appropriate programs for children to learn about Jesus through stories, songs, and activities in both cultures."
+  
+  - image: "/images/services/house.jpg"
+    time: "Every 3rd Saturday of the Month"
+    title: "Home Fellowship"
+    description: "Dynamic homely environment fellowship focusing on discipleship, fellowship, and developing leadership skills."
+  
+  - image: "/images/services/mothers.jpg"
+    time: "Sunday after Sevice"
+    title: "Women's Ministry"
+    description: "Intimate gatherings in after service for Bible study, prayer, and deeper fellowship with all the womens."
+  
+  - image: "/images/services/christmas.jpg"
+    time: "December 25"
+    title: "Christmas Celebration"
+    description: "A yearly gathering celebrating the joy of the greatest gift ever given—Jesus Christ—through traditional worship music, dance, drama, and heartfelt fellowship."
