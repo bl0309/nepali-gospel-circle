@@ -3,15 +3,291 @@
 <title>{{ if .IsHome }}{{ .Site.Title }} - {{ .Site.Params.description }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<!-- DNS Prefetch for external domains -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//img.youtube.com">
+<link rel="dns-prefetch" href="//youtube.com">
 
-<!-- CSS -->
-<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+<!-- Preconnect to critical domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Fonts with async loading -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet"></noscript>
+
+<!-- Font Awesome with async loading -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"></noscript>
+
+<!-- Critical CSS - Inline for instant rendering -->
+<style>
+/* Critical CSS for above-the-fold content */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #5141b5;
+    --accent-color: #e76f51;
+    --text-dark: #264653;
+    --text-light: #6c757d;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Critical - Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 15px var(--shadow);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+/* Critical - Hero Section */
+.hero {
+    height: 100vh;
+    background:
+        linear-gradient(135deg, rgba(15, 14, 22, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%),
+        url('/images/home_img.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    box-shadow: 0 8px 25px rgba(81, 65, 181, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Responsive - Critical */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    .mobile-menu {
+        display: flex;
+    }
+    .nav-container {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    .hero-content {
+        padding: 0 1rem;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+</style>
+
+<!-- Main CSS - Load with proper error handling -->
+{{ if fileExists "static/css/style.css" }}
+    <link rel="preload" href="{{ "css/style.css" | absURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ "css/style.css" | absURL }}"></noscript>
+{{ else }}
+    <!-- Fallback: Load CSS normally if file exists -->
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+{{ end }}
 
 <!-- Meta Tags -->
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="{{ .Site.Params.description }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ .Permalink }}">
+
+<!-- Async CSS loader script -->
+<script>
+// Load CSS asynchronously
+function loadCSS(href, before, media, attributes) {
+    var doc = window.document;
+    var ss = doc.createElement("link");
+    var ref;
+    if (before) {
+        ref = before;
+    } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+    }
+    var sheets = doc.styleSheets;
+    if (attributes) {
+        for (var attributeName in attributes) {
+            if (attributes.hasOwnProperty(attributeName)) {
+                ss.setAttribute(attributeName, attributes[attributeName]);
+            }
+        }
+    }
+    ss.rel = "stylesheet";
+    ss.href = href;
+    ss.media = "only x";
+    function ready(cb) {
+        if (doc.body) {
+            return cb();
+        }
+        setTimeout(function () {
+            ready(cb);
+        });
+    }
+    ready(function () {
+        ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+    });
+    var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+            if (sheets[i].href === resolvedHref) {
+                return cb();
+            }
+        }
+        setTimeout(function () {
+            onloadcssdefined(cb);
+        });
+    };
+    function loadCB() {
+        if (ss.addEventListener) {
+            ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+    }
+    if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+    }
+    ss.onload = loadCB;
+    onloadcssdefined(loadCB);
+    return ss;
+}
+</script>

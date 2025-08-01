@@ -1,40 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Nepali Gospel Circle</title>
-    <link>http://localhost:54877/</link>
-    <description>Recent content on Nepali Gospel Circle</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 23 Jul 2025 19:58:17 -0500</lastBuildDate>
-    <atom:link href="http://localhost:54877/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Activities</title>
-      <link>http://localhost:54877/activities/</link>
-      <pubDate>Wed, 23 Jul 2025 19:58:17 -0500</pubDate>
-      <guid>http://localhost:54877/activities/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ministries</title>
-      <link>http://localhost:54877/ministries/</link>
-      <pubDate>Wed, 23 Jul 2025 19:58:17 -0500</pubDate>
-      <guid>http://localhost:54877/ministries/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>About Us</title>
-      <link>http://localhost:54877/about/</link>
-      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54877/about/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Nepali Gospel Circle&lt;/strong&gt; is a Christ-centered church committed to worship, prayer, and serving the community in love. We gather weekly in Irving, TX and welcome all to join us in pursuing God’s purpose.&lt;/p&gt;&#xA;&lt;p&gt;Our vision is to make disciples, raise up leaders, and reflect Christ in everything we do.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Learn more about our leaders:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:54877/about/pastors/&#34;&gt;Meet Our Pastors&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:54877/about/elders/&#34;&gt;Meet Our Elders&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>Contact Us</title>
-      <link>http://localhost:54877/contact/</link>
-      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54877/contact/</guid>
-      <description>&lt;p&gt;You can reach us anytime using the form below or by emailing us at &lt;strong&gt;&lt;a href=&#34;mailto:ngospelc@gmail.com&#34;&gt;ngospelc@gmail.com&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;form action=&#34;https://formspree.io/f/YOUR_FORM_ID&#34; method=&#34;POST&#34;&gt;&#xA;  &lt;label&gt;Full Name: &lt;input type=&#34;text&#34; name=&#34;name&#34; required&gt;&lt;/label&gt;&lt;br&gt;&lt;br&gt;&#xA;  &lt;label&gt;Your Email: &lt;input type=&#34;email&#34; name=&#34;_replyto&#34; required&gt;&lt;/label&gt;&lt;br&gt;&lt;br&gt;&#xA;  &lt;label&gt;Do you have any message for us?&lt;br&gt;&lt;textarea name=&#34;message&#34; rows=&#34;5&#34; required&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;br&gt;&lt;br&gt;&#xA;  &lt;button type=&#34;submit&#34;&gt;Send&lt;/button&gt;&#xA;&lt;/form&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;find-us-on-the-map&#34;&gt;Find Us on the Map&lt;/h3&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;&#34;&gt;&#xA;    &lt;iframe &#xA;        src=&#34;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d539.484749853011!2d-97.00430811560086!3d32.867872269837754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e821db56982ff%3A0x600097d3e3435995!2s4401%20State%20Hwy%20161!5e0!3m2!1sen!2sus!4v1753317882859!5m2!1sen!2sus&#34; &#xA;        style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;&#34; &#xA;        allowfullscreen=&#34;&#34; &#xA;        loading=&#34;lazy&#34; &#xA;        referrerpolicy=&#34;no-referrer-when-downgrade&#34;&gt;&#xA;    &lt;/iframe&gt;&#xA;&lt;/div&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nepali Gospel Circle</title><link>http://localhost:56753/</link><description>Recent content on Nepali Gospel Circle</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 23 Jul 2025 19:58:17 -0500</lastBuildDate><atom:link href="http://localhost:56753/index.xml" rel="self" type="application/rss+xml"/><item><title>Activities</title><link>http://localhost:56753/activities/</link><pubDate>Wed, 23 Jul 2025 19:58:17 -0500</pubDate><guid>http://localhost:56753/activities/</guid><description/></item><item><title>Ministries</title><link>http://localhost:56753/ministries/</link><pubDate>Wed, 23 Jul 2025 19:58:17 -0500</pubDate><guid>http://localhost:56753/ministries/</guid><description/></item><item><title>About Us</title><link>http://localhost:56753/about/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>http://localhost:56753/about/</guid><description>&lt;p>&lt;strong>Nepali Gospel Circle&lt;/strong> is a Christ-centered church committed to worship, prayer, and serving the community in love. We gather weekly in Irving, TX and welcome all to join us in pursuing God’s purpose.&lt;/p>
+&lt;p>Our vision is to make disciples, raise up leaders, and reflect Christ in everything we do.&lt;/p>
+&lt;p>&lt;strong>Learn more about our leaders:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://localhost:56753/about/pastors/">Meet Our Pastors&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://localhost:56753/about/elders/">Meet Our Elders&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Contact Us</title><link>http://localhost:56753/contact/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>http://localhost:56753/contact/</guid><description>&lt;p>You can reach us anytime using the form below or by emailing us at &lt;strong>&lt;a href="mailto:ngospelc@gmail.com">ngospelc@gmail.com&lt;/a>&lt;/strong>.&lt;/p>
+&lt;form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+ &lt;label>Full Name: &lt;input type="text" name="name" required>&lt;/label>&lt;br>&lt;br>
+ &lt;label>Your Email: &lt;input type="email" name="_replyto" required>&lt;/label>&lt;br>&lt;br>
+ &lt;label>Do you have any message for us?&lt;br>&lt;textarea name="message" rows="5" required>&lt;/textarea>&lt;/label>&lt;br>&lt;br>
+ &lt;button type="submit">Send&lt;/button>
+&lt;/form>
+&lt;hr>
+&lt;h3 id="find-us-on-the-map">Find Us on the Map&lt;/h3>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+ &lt;iframe 
+ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d539.484749853011!2d-97.00430811560086!3d32.867872269837754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e821db56982ff%3A0x600097d3e3435995!2s4401%20State%20Hwy%20161!5e0!3m2!1sen!2sus!4v1753317882859!5m2!1sen!2sus" 
+ style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+ allowfullscreen="" 
+ loading="lazy" 
+ referrerpolicy="no-referrer-when-downgrade">
+ &lt;/iframe>
+&lt;/div></description></item></channel></rss>

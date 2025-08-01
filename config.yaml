@@ -2,6 +2,22 @@ baseURL: 'https://www.nepaligospelcircle.com/'
 languageCode: 'en-us'
 title: 'Nepali Gospel Circle'
 
+# Performance optimizations
+minify:
+  minifyOutput: true
+  disableCSS: false
+  disableHTML: false
+  disableJS: false
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+
+# Image processing
+imaging:
+  resampleFilter: "CatmullRom"
+  quality: 85
+  anchor: "smart"
+
 params:
   description: 'A vibrant community of faith where Nepali speaking believers come together to worship, grow, and serve God with joyful hearts.'
   author: 'Nepali Gospel Circle'
@@ -30,9 +46,8 @@ params:
   # Social Media
   social:
     facebook: "https://www.facebook.com/nepaligospelcircle"
-    instagram: "#"
+    instagram: "https://www.instagram.com/nepaligospelcircle?igsh=MWl1bjNwMnl0bnh4dg=="
     youtube: "https://www.youtube.com/@NepaliGospelCircle"
-    twitter: "#"
 
 menu:
   main:
@@ -62,3 +77,6 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    lineNos: false
+    style: "github"

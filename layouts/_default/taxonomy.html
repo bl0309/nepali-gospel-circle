@@ -1,0 +1,28 @@
+{{ define "main" }}
+<main id="main" class="main-content">
+    <div class="container">
+        <header class="taxonomy-header">
+            <h1>{{ .Title }}</h1>
+            {{ if .Description }}
+            <p class="taxonomy-description">{{ .Description }}</p>
+            {{ end }}
+        </header>
+        
+        <div class="taxonomy-content">
+            {{ range .Pages }}
+            <article class="taxonomy-item">
+                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                {{ if .Description }}
+                <p>{{ .Description }}</p>
+                {{ end }}
+                {{ if .Date }}
+                <time datetime="{{ .Date.Format "2006-01-02" }}">
+                    {{ .Date.Format "January 2, 2006" }}
+                </time>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</main>
+{{ end }}
