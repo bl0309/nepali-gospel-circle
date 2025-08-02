@@ -1,6 +1,14 @@
 {{ define "main" }}
-<!-- Hero Section -->
 <section class="hero" id="home">
+    <!-- Background Image Slider -->
+    <div class="hero-slider" id="heroSlider">
+        <div class="hero-slide active" style="background-image: url('/images/home_img.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('/images/home_ps.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('/images/home_worship.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('/images/leaders/elders.jpg');"></div>
+    </div>
+    
+    <!-- Hero Content -->
     <div class="hero-content">
         <h2>Join us this</h2>
         <h1>SUNDAY</h1>
@@ -17,6 +25,22 @@
             </a>
         </div>
     </div>
+    
+    <!-- Navigation Dots -->
+    <div class="hero-dots" id="heroDots">
+        <span class="hero-dot active" onclick="currentSlide(1)"></span>
+        <span class="hero-dot" onclick="currentSlide(2)"></span>
+        <span class="hero-dot" onclick="currentSlide(3)"></span>
+        <span class="hero-dot" onclick="currentSlide(4)"></span>
+    </div>
+    
+    <!-- Navigation Arrows (Optional) -->
+    <button class="hero-nav prev" onclick="changeSlide(-1)">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="hero-nav next" onclick="changeSlide(1)">
+        <i class="fas fa-chevron-right"></i>
+    </button>
 </section>
 
 <!-- About Section -->

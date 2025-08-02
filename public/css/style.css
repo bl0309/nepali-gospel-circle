@@ -362,6 +362,213 @@ body {
     transform: scale(1.2) rotate(360deg);
 }
 
+/* Enhanced Hero Section with Sliding Backgrounds */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Image Slider */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    transform: scale(1.05); /* Slight zoom for Ken Burns effect */
+    animation: kenBurns 12s ease-in-out infinite;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+/* Ken Burns zoom effect */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1.05) translateX(0px);
+    }
+    25% {
+        transform: scale(1.08) translateX(-20px);
+    }
+    50% {
+        transform: scale(1.1) translateX(0px);
+    }
+    75% {
+        transform: scale(1.08) translateX(20px);
+    }
+    100% {
+        transform: scale(1.05) translateX(0px);
+    }
+}
+
+/* Background overlay for better text readability */
+.hero-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(15, 14, 22, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+/* Hero content stays on top */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    color: white;
+}
+
+/* Slide Navigation Dots (Optional) */
+.hero-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 4;
+}
+
+.hero-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-dot.active {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.hero-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+/* Slide Direction Arrows (Optional) */
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 4;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.hero-nav.prev {
+    left: 30px;
+}
+
+.hero-nav.next {
+    right: 30px;
+}
+
+/* Hide navigation on mobile */
+@media (max-width: 768px) {
+    .hero-nav {
+        display: none;
+    }
+    
+    .hero-dots {
+        bottom: 20px;
+        gap: 10px;
+    }
+    
+    .hero-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Smooth transitions for different slide effects */
+.hero-slide.slide-left {
+    animation: slideFromLeft 1s ease-out;
+}
+
+.hero-slide.slide-right {
+    animation: slideFromRight 1s ease-out;
+}
+
+.hero-slide.fade-up {
+    animation: fadeFromBottom 1s ease-out;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%) scale(1.05);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1.05);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%) scale(1.05);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1.05);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeFromBottom {
+    0% {
+        transform: translateY(50px) scale(1.05);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1.05);
+        opacity: 1;
+    }
+}
+
 /* Enhanced About Section with Staggered Animations */
 .about {
     padding: 8rem 0;
