@@ -2227,7 +2227,7 @@ body {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --text-dark: #ffffff;
         --text-light: #cccccc;
@@ -2254,4 +2254,4 @@ body {
         background: rgba(0, 0, 0, 0.8);
         color: var(--text-dark);
     }
-}
+} */
