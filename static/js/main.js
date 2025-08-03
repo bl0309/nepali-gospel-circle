@@ -1,15 +1,15 @@
 // Enhanced Main JavaScript with Advanced Animations and Interactions
 
 // Page Loading Animation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Create loading screen
     const loadingScreen = document.createElement('div');
     loadingScreen.className = 'page-loading';
     loadingScreen.innerHTML = '<div class="loading-spinner"></div>';
     document.body.appendChild(loadingScreen);
-    
+
     // Hide loading screen after page loads
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         setTimeout(() => {
             loadingScreen.classList.add('fade-out');
             setTimeout(() => {
@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Enhanced Navbar with Glassmorphism Effect
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
     const scrollPosition = window.scrollY;
-    
+
     if (scrollPosition > 50) {
         navbar.classList.add('scrolled');
     } else {
@@ -35,10 +35,10 @@ window.addEventListener('scroll', function() {
 const mobileMenu = document.querySelector('.mobile-menu');
 const navMenu = document.querySelector('.nav-menu');
 
-mobileMenu.addEventListener('click', function() {
+mobileMenu.addEventListener('click', function () {
     navMenu.classList.toggle('active');
     this.classList.toggle('active');
-    
+
     // Animate hamburger menu
     const spans = this.querySelectorAll('span');
     spans.forEach((span, index) => {
@@ -55,14 +55,14 @@ mobileMenu.addEventListener('click', function() {
 
 // Smooth Scrolling with Enhanced Easing
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             const headerOffset = 80;
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
+
             // Custom smooth scroll with easing
             smoothScrollTo(offsetPosition, 1000);
         }
@@ -74,7 +74,7 @@ function smoothScrollTo(endY, duration) {
     const startY = window.scrollY;
     const distanceY = endY - startY;
     let startTime = null;
-    
+
     function animation(currentTime) {
         if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
@@ -82,14 +82,14 @@ function smoothScrollTo(endY, duration) {
         window.scrollTo(0, run);
         if (timeElapsed < duration) requestAnimationFrame(animation);
     }
-    
+
     function easeInOutCubic(t, b, c, d) {
         t /= d / 2;
         if (t < 1) return c / 2 * t * t * t + b;
         t -= 2;
         return c / 2 * (t * t * t + 2) + b;
     }
-    
+
     requestAnimationFrame(animation);
 }
 
@@ -99,24 +99,24 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            
+
             // Trigger counter animations
             if (entry.target.classList.contains('counter')) {
                 animateCounter(entry.target);
             }
-            
+
             // Staggered animations for grid items
             if (entry.target.parentElement.classList.contains('about-grid') ||
                 entry.target.parentElement.classList.contains('services-grid') ||
                 entry.target.parentElement.classList.contains('messages-grid')) {
-                
+
                 const siblings = Array.from(entry.target.parentElement.children);
                 const index = siblings.indexOf(entry.target);
-                
+
                 setTimeout(() => {
                     entry.target.classList.add('visible');
                 }, index * 100);
@@ -131,15 +131,15 @@ document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in,
 });
 
 // Enhanced Parallax Effect for Hero Section
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
     const heroContent = document.querySelector('.hero-content');
-    
+
     if (hero) {
         // Parallax background
         hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-        
+
         // Parallax content with different speed
         if (heroContent) {
             heroContent.style.transform = `translateY(${scrolled * 0.1}px)`;
@@ -156,37 +156,37 @@ class ParticleSystem {
         this.ctx = null;
         this.init();
     }
-    
+
     init() {
         // Create canvas for particles
         this.canvas = document.createElement('canvas');
         this.canvas.className = 'particles';
         this.ctx = this.canvas.getContext('2d');
-        
+
         // Set canvas size
         this.resize();
         window.addEventListener('resize', () => this.resize());
-        
+
         // Create particles
         for (let i = 0; i < this.particleCount; i++) {
             this.particles.push(this.createParticle());
         }
-        
+
         // Start animation
         this.animate();
-        
+
         // Add to hero section
         const hero = document.querySelector('.hero');
         if (hero) {
             hero.appendChild(this.canvas);
         }
     }
-    
+
     resize() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
     }
-    
+
     createParticle() {
         return {
             x: Math.random() * this.canvas.width,
@@ -198,21 +198,21 @@ class ParticleSystem {
             color: Math.random() > 0.5 ? 'rgba(81, 65, 181, 0.3)' : 'rgba(231, 111, 81, 0.3)'
         };
     }
-    
+
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        
+
         this.particles.forEach(particle => {
             // Update position
             particle.x += particle.vx;
             particle.y += particle.vy;
-            
+
             // Wrap around edges
             if (particle.x < 0) particle.x = this.canvas.width;
             if (particle.x > this.canvas.width) particle.x = 0;
             if (particle.y < 0) particle.y = this.canvas.height;
             if (particle.y > this.canvas.height) particle.y = 0;
-            
+
             // Draw particle
             this.ctx.globalAlpha = particle.opacity;
             this.ctx.fillStyle = particle.color;
@@ -220,7 +220,7 @@ class ParticleSystem {
             this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
             this.ctx.fill();
         });
-        
+
         requestAnimationFrame(() => this.animate());
     }
 }
@@ -231,27 +231,27 @@ class ParticleSystem {
 // Enhanced Interactive Cards with 3D Effects
 function enhance3DCards() {
     const cards = document.querySelectorAll('.about-card, .service-card, .message-card, .team-card');
-    
+
     cards.forEach(card => {
-        card.addEventListener('mouseenter', function(e) {
+        card.addEventListener('mouseenter', function (e) {
             this.style.transition = 'transform 0.1s ease-out';
         });
-        
-        card.addEventListener('mousemove', function(e) {
+
+        card.addEventListener('mousemove', function (e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             const rotateX = (y - centerY) / 10;
             const rotateY = (centerX - x) / 10;
-            
+
             this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transition = 'transform 0.3s ease-out';
             this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
         });
@@ -267,20 +267,20 @@ function createRipple(event) {
     const circle = document.createElement('span');
     const diameter = Math.max(button.clientWidth, button.clientHeight);
     const radius = diameter / 2;
-    
+
     const rect = button.getBoundingClientRect();
     circle.style.width = circle.style.height = `${diameter}px`;
     circle.style.left = `${event.clientX - rect.left - radius}px`;
     circle.style.top = `${event.clientY - rect.top - radius}px`;
     circle.classList.add('ripple-effect');
-    
+
     const ripple = button.getElementsByClassName('ripple-effect')[0];
     if (ripple) {
         ripple.remove();
     }
-    
+
     button.appendChild(circle);
-    
+
     setTimeout(() => {
         circle.remove();
     }, 600);
@@ -298,12 +298,12 @@ class VideoModal {
         this.player = null;
         this.init();
     }
-    
+
     init() {
         this.createModal();
         this.bindEvents();
     }
-    
+
     createModal() {
         const modalHTML = `
             <div class="youtube-modal" id="youtube-modal">
@@ -320,12 +320,12 @@ class VideoModal {
                 </div>
             </div>
         `;
-        
+
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         this.modal = document.getElementById('youtube-modal');
         this.player = document.getElementById('youtube-player');
     }
-    
+
     bindEvents() {
         // Message card clicks
         document.querySelectorAll('.message-card').forEach(card => {
@@ -333,12 +333,12 @@ class VideoModal {
                 e.preventDefault();
                 const videoId = card.dataset.videoId;
                 const title = card.querySelector('h3').textContent;
-                
+
                 if (videoId) {
                     this.open(videoId, title);
                 }
             });
-            
+
             // Keyboard accessibility
             card.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -346,23 +346,23 @@ class VideoModal {
                     card.click();
                 }
             });
-            
+
             card.setAttribute('tabindex', '0');
             card.setAttribute('role', 'button');
         });
-        
+
         // Close button
         this.modal.querySelector('.close-modal').addEventListener('click', () => {
             this.close();
         });
-        
+
         // Click outside to close
         this.modal.addEventListener('click', (e) => {
             if (e.target === this.modal) {
                 this.close();
             }
         });
-        
+
         // Escape key to close
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.modal.classList.contains('active')) {
@@ -370,42 +370,42 @@ class VideoModal {
             }
         });
     }
-    
+
     open(videoId, title) {
         const modalTitle = document.getElementById('modal-title');
         modalTitle.textContent = title;
-        
+
         const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&color=white`;
         this.player.src = embedUrl;
-        
+
         this.modal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        
+
         // Focus management
         setTimeout(() => {
             this.modal.querySelector('.close-modal').focus();
         }, 100);
-        
+
         // Analytics tracking
         this.trackVideoView(videoId, title);
     }
-    
+
     close() {
         this.modal.classList.remove('active');
         document.body.style.overflow = '';
         this.player.src = '';
-        
+
         // Return focus to trigger element
         const activeCard = document.querySelector('.message-card:focus');
         if (activeCard) {
             activeCard.focus();
         }
     }
-    
+
     trackVideoView(videoId, title) {
         // Track video views (implement your analytics here)
         console.log(`Video viewed: ${title} (${videoId})`);
-        
+
         // Example Google Analytics tracking
         if (typeof gtag !== 'undefined') {
             gtag('event', 'video_play', {
@@ -429,7 +429,7 @@ function animateCounter(element) {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -446,7 +446,7 @@ let ticking = false;
 
 function updateScrollAnimations() {
     const scrollTop = window.pageYOffset;
-    
+
     // Parallax effects
     const parallaxElements = document.querySelectorAll('[data-parallax]');
     parallaxElements.forEach(element => {
@@ -454,18 +454,18 @@ function updateScrollAnimations() {
         const yPos = -(scrollTop * speed);
         element.style.transform = `translateY(${yPos}px)`;
     });
-    
+
     // Fade elements based on scroll position
     const fadeElements = document.querySelectorAll('[data-fade]');
     fadeElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150;
-        
+
         if (elementTop < window.innerHeight - elementVisible) {
             element.classList.add('fade-in-visible');
         }
     });
-    
+
     ticking = false;
 }
 
@@ -483,22 +483,22 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const img = entry.target;
-            
+
             // Fade in effect
             img.style.opacity = '0';
             img.style.transition = 'opacity 0.5s ease-in-out';
-            
+
             img.onload = () => {
                 img.style.opacity = '1';
                 img.classList.add('loaded');
             };
-            
+
             // Load the image
             if (img.dataset.src) {
                 img.src = img.dataset.src;
                 img.removeAttribute('data-src');
             }
-            
+
             observer.unobserve(img);
         }
     });
@@ -516,7 +516,7 @@ document.querySelectorAll('img[data-src]').forEach(img => {
 function updateBackgroundColor() {
     const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     const hue = Math.floor(scrollPercentage * 3.6); // 0-360 degrees
-    
+
     document.documentElement.style.setProperty('--dynamic-hue', hue);
 }
 
@@ -524,17 +524,17 @@ window.addEventListener('scroll', updateBackgroundColor);
 
 // Enhanced Event Item Interactions
 document.querySelectorAll('.event-item').forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
         const eventTitle = this.querySelector('h3').textContent;
         const eventDate = this.querySelector('.event-date').textContent;
         const eventDescription = this.querySelector('p').textContent;
-        
+
         // Create enhanced modal for event details
         showEventModal(eventTitle, eventDate, eventDescription);
     });
-    
+
     // Add hover sound effect (optional)
-    item.addEventListener('mouseenter', function() {
+    item.addEventListener('mouseenter', function () {
         // You can add a subtle sound effect here
         // playHoverSound();
     });
@@ -567,14 +567,14 @@ function showEventModal(title, date, description) {
             </div>
         </div>
     `;
-    
+
     document.body.appendChild(modal);
-    
+
     // Show modal with animation
     setTimeout(() => {
         modal.classList.add('active');
     }, 10);
-    
+
     // Close button functionality
     modal.querySelector('.close-event-modal').addEventListener('click', () => {
         modal.classList.remove('active');
@@ -582,7 +582,7 @@ function showEventModal(title, date, description) {
             modal.remove();
         }, 300);
     });
-    
+
     // Click outside to close
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
@@ -598,9 +598,9 @@ function showEventModal(title, date, description) {
 function addToCalendar(title, date) {
     const startDate = new Date(date).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
     const endDate = new Date(new Date(date).getTime() + 2 * 60 * 60 * 1000).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-    
+
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent('Nepali Gospel Circle Event')}&location=${encodeURIComponent('4401 N State Highway 161, Irving, Texas 75038')}`;
-    
+
     window.open(googleCalendarUrl, '_blank');
 }
 
@@ -631,13 +631,13 @@ function showNotification(message, type = 'success') {
             <span>${message}</span>
         </div>
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.classList.add('show');
     }, 10);
-    
+
     setTimeout(() => {
         notification.classList.remove('show');
         setTimeout(() => {
@@ -659,10 +659,10 @@ class TypeWriter {
         this.isDeleting = false;
         this.type();
     }
-    
+
     type() {
         const currentWord = this.words[this.currentWordIndex];
-        
+
         if (this.isDeleting) {
             this.element.textContent = currentWord.substring(0, this.currentCharIndex - 1);
             this.currentCharIndex--;
@@ -670,9 +670,9 @@ class TypeWriter {
             this.element.textContent = currentWord.substring(0, this.currentCharIndex + 1);
             this.currentCharIndex++;
         }
-        
+
         let typeSpeed = this.isDeleting ? this.deleteSpeed : this.speed;
-        
+
         if (!this.isDeleting && this.currentCharIndex === currentWord.length) {
             typeSpeed = this.pauseTime;
             this.isDeleting = true;
@@ -681,7 +681,7 @@ class TypeWriter {
             this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
             typeSpeed = 500;
         }
-        
+
         setTimeout(() => this.type(), typeSpeed);
     }
 }
@@ -697,7 +697,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Growing Together in Christ",
             "Your Spiritual Home Awaits"
         ];
-        
+
         setTimeout(() => {
             new TypeWriter(heroSubtitle, words, {
                 speed: 80,
@@ -716,20 +716,20 @@ function createFloatingActionButton() {
     fab.innerHTML = '<i class="fas fa-phone"></i>';
     fab.title = 'Contact Us';
     fab.setAttribute('aria-label', 'Contact Us');
-    
+
     document.body.appendChild(fab);
-    
+
     // Hide/show FAB based on scroll position
     let lastScrollTop = 0;
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         if (scrollTop > lastScrollTop && scrollTop > 300) {
             fab.style.transform = 'translateY(100px)';
         } else if (scrollTop < lastScrollTop) {
             fab.style.transform = 'translateY(0)';
         }
-        
+
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 }
@@ -740,7 +740,7 @@ document.addEventListener('DOMContentLoaded', createFloatingActionButton);
 // Enhanced Text Reveal Animation
 function initTextReveal() {
     const textElements = document.querySelectorAll('.text-reveal');
-    
+
     const textObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -751,7 +751,7 @@ function initTextReveal() {
     }, {
         threshold: 0.1
     });
-    
+
     textElements.forEach(element => {
         textObserver.observe(element);
     });
@@ -767,7 +767,7 @@ class MouseTrail {
         this.mouse = { x: 0, y: 0 };
         this.init();
     }
-    
+
     init() {
         // Create trail dots
         for (let i = 0; i < 20; i++) {
@@ -790,33 +790,33 @@ class MouseTrail {
                 y: 0
             });
         }
-        
+
         // Track mouse movement
         document.addEventListener('mousemove', (e) => {
             this.mouse.x = e.clientX;
             this.mouse.y = e.clientY;
         });
-        
+
         // Animate trail
         this.animate();
     }
-    
+
     animate() {
         let x = this.mouse.x;
         let y = this.mouse.y;
-        
+
         this.dots.forEach((dot, index) => {
             dot.element.style.left = x + 'px';
             dot.element.style.top = y + 'px';
-            
+
             const nextDot = this.dots[index + 1] || this.dots[0];
             x += (nextDot.x - x) * 0.3;
             y += (nextDot.y - y) * 0.3;
-            
+
             dot.x = x;
             dot.y = y;
         });
-        
+
         requestAnimationFrame(() => this.animate());
     }
 }
@@ -832,7 +832,7 @@ class PerformanceMonitor {
         this.metrics = {};
         this.init();
     }
-    
+
     init() {
         // Monitor page load performance
         window.addEventListener('load', () => {
@@ -840,19 +840,19 @@ class PerformanceMonitor {
             this.metrics.loadTime = navigation.loadEventEnd - navigation.loadEventStart;
             this.metrics.domContentLoaded = navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart;
             this.metrics.totalLoadTime = navigation.loadEventEnd - navigation.fetchStart;
-            
+
             console.log('Performance Metrics:', this.metrics);
         });
-        
+
         // Monitor scroll performance
         let scrollCount = 0;
         let lastScrollTime = 0;
-        
+
         window.addEventListener('scroll', () => {
             scrollCount++;
             lastScrollTime = performance.now();
         });
-        
+
         setInterval(() => {
             if (scrollCount > 0) {
                 this.metrics.scrollPerformance = scrollCount;
@@ -884,24 +884,24 @@ function enhanceAccessibility() {
         z-index: 10000;
         transition: top 0.3s ease;
     `;
-    
+
     skipLink.addEventListener('focus', () => {
         skipLink.style.top = '6px';
     });
-    
+
     skipLink.addEventListener('blur', () => {
         skipLink.style.top = '-40px';
     });
-    
+
     document.body.insertBefore(skipLink, document.body.firstChild);
-    
+
     // Enhanced keyboard navigation
     document.addEventListener('keydown', (e) => {
         // Tab key navigation enhancement
         if (e.key === 'Tab') {
             document.body.classList.add('keyboard-navigation');
         }
-        
+
         // Escape key to close modals
         if (e.key === 'Escape') {
             const activeModal = document.querySelector('.youtube-modal.active, .event-modal.active');
@@ -911,11 +911,11 @@ function enhanceAccessibility() {
             }
         }
     });
-    
+
     document.addEventListener('mousedown', () => {
         document.body.classList.remove('keyboard-navigation');
     });
-    
+
     // ARIA live region for dynamic content
     const liveRegion = document.createElement('div');
     liveRegion.setAttribute('aria-live', 'polite');
@@ -933,7 +933,7 @@ function enhanceAccessibility() {
         border: 0;
     `;
     document.body.appendChild(liveRegion);
-    
+
     window.announceToScreenReader = (message) => {
         liveRegion.textContent = message;
         setTimeout(() => {
@@ -961,7 +961,7 @@ if ('serviceWorker' in navigator) {
 // Enhanced Error Handling
 window.addEventListener('error', (event) => {
     console.error('JavaScript Error:', event.error);
-    
+
     // Show user-friendly error message
     showNotification('Something went wrong. Please refresh the page.', 'error');
 });
@@ -992,24 +992,24 @@ function initDarkModeToggle() {
         z-index: 1001;
         transition: all 0.3s ease;
     `;
-    
+
     // Check for saved preference
     const darkMode = localStorage.getItem('darkMode') === 'true';
     if (darkMode) {
         document.body.classList.add('dark-mode');
         darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
-    
+
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const isDark = document.body.classList.contains('dark-mode');
-        
+
         darkModeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         localStorage.setItem('darkMode', isDark);
-        
+
         announceToScreenReader(isDark ? 'Dark mode enabled' : 'Light mode enabled');
     });
-    
+
     document.body.appendChild(darkModeToggle);
 }
 
@@ -1020,30 +1020,30 @@ function initDarkModeToggle() {
 function enhanceContactForm() {
     const contactForm = document.querySelector('#contact-form');
     if (!contactForm) return;
-    
+
     const inputs = contactForm.querySelectorAll('input, textarea');
-    
+
     inputs.forEach(input => {
         // Floating label effect
         input.addEventListener('focus', () => {
             input.parentElement.classList.add('focused');
         });
-        
+
         input.addEventListener('blur', () => {
             if (!input.value) {
                 input.parentElement.classList.remove('focused');
             }
         });
-        
+
         // Real-time validation
         input.addEventListener('input', () => {
             validateField(input);
         });
     });
-    
+
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         // Validate all fields
         let isValid = true;
         inputs.forEach(input => {
@@ -1051,18 +1051,18 @@ function enhanceContactForm() {
                 isValid = false;
             }
         });
-        
+
         if (isValid) {
             // Show loading state
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             submitButton.textContent = 'Sending...';
             submitButton.disabled = true;
-            
+
             try {
                 // Simulate form submission
                 await new Promise(resolve => setTimeout(resolve, 2000));
-                
+
                 showNotification('Message sent successfully!', 'success');
                 contactForm.reset();
                 announceToScreenReader('Your message has been sent successfully');
@@ -1081,13 +1081,13 @@ function validateField(field) {
     const fieldType = field.type;
     let isValid = true;
     let errorMessage = '';
-    
+
     // Remove existing error
     const existingError = field.parentElement.querySelector('.field-error');
     if (existingError) {
         existingError.remove();
     }
-    
+
     // Validation rules
     if (field.required && !value) {
         isValid = false;
@@ -1099,7 +1099,7 @@ function validateField(field) {
         isValid = false;
         errorMessage = 'Please enter a valid phone number';
     }
-    
+
     // Show error if invalid
     if (!isValid) {
         const errorElement = document.createElement('span');
@@ -1116,7 +1116,7 @@ function validateField(field) {
     } else {
         field.classList.remove('error');
     }
-    
+
     return isValid;
 }
 
@@ -1278,7 +1278,7 @@ document.head.appendChild(styleSheet);
 // Initialize all enhanced features
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🎉 Enhanced Nepali Gospel Circle website loaded successfully!');
-    
+
     // Optional: Add performance timing
     window.addEventListener('load', () => {
         const loadTime = performance.now();
@@ -1296,96 +1296,119 @@ class HeroSlider {
         this.totalSlides = this.slides.length;
         this.autoPlayInterval = null;
         this.autoPlayDelay = 3000; // 3 seconds
-        
+
         this.init();
     }
-    
+
     init() {
         if (this.slides.length === 0) return;
-        
+
         // Start autoplay
         this.startAutoPlay();
-        
+
         // Pause on hover
         const heroSection = document.querySelector('.hero');
         heroSection.addEventListener('mouseenter', () => this.pauseAutoPlay());
         heroSection.addEventListener('mouseleave', () => this.startAutoPlay());
-        
+
         // Touch/swipe support for mobile
         this.addTouchSupport();
     }
-    
+
     showSlide(index) {
         // Remove active class from all slides and dots
         this.slides.forEach(slide => slide.classList.remove('active'));
         this.dots.forEach(dot => dot.classList.remove('active'));
-        
+
         // Add active class to current slide and dot
         this.slides[index].classList.add('active');
         this.dots[index].classList.add('active');
-        
+
         this.currentSlide = index;
     }
-    
+
     nextSlide() {
         const next = (this.currentSlide + 1) % this.totalSlides;
         this.showSlide(next);
     }
-    
+
     prevSlide() {
         const prev = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
         this.showSlide(prev);
     }
-    
+
     goToSlide(index) {
         this.showSlide(index);
         this.resetAutoPlay();
     }
-    
+
     startAutoPlay() {
         this.pauseAutoPlay();
         this.autoPlayInterval = setInterval(() => {
             this.nextSlide();
         }, this.autoPlayDelay);
     }
-    
+
     pauseAutoPlay() {
         if (this.autoPlayInterval) {
             clearInterval(this.autoPlayInterval);
             this.autoPlayInterval = null;
         }
     }
-    
+
     resetAutoPlay() {
         this.startAutoPlay();
     }
-    
+
+    // Fixed Touch Support - Allows Vertical Scrolling
     addTouchSupport() {
         let startX = 0;
+        let startY = 0;
         let endX = 0;
-        
+        let endY = 0;
+        let isHorizontalSwipe = false;
+
         const heroSection = document.querySelector('.hero');
-        
+
         heroSection.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
-        });
-        
+            startY = e.touches[0].clientY;
+            isHorizontalSwipe = false;
+        }, { passive: true });
+
         heroSection.addEventListener('touchmove', (e) => {
-            e.preventDefault(); // Prevent scrolling
+            if (!isHorizontalSwipe) {
+                const currentX = e.touches[0].clientX;
+                const currentY = e.touches[0].clientY;
+                const deltaX = Math.abs(currentX - startX);
+                const deltaY = Math.abs(currentY - startY);
+
+                // Only prevent default if it's clearly a horizontal swipe
+                if (deltaX > deltaY && deltaX > 30) {
+                    isHorizontalSwipe = true;
+                    e.preventDefault(); // Only prevent horizontal swipes
+                }
+                // Allow vertical scrolling by not calling preventDefault for vertical movement
+            } else {
+                e.preventDefault(); // Continue preventing if we determined it's horizontal
+            }
         });
-        
+
         heroSection.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            this.handleSwipe(startX, endX);
-        });
+            if (isHorizontalSwipe) {
+                endX = e.changedTouches[0].clientX;
+                endY = e.changedTouches[0].clientY;
+                this.handleSwipe(startX, endX);
+            }
+        }, { passive: true });
     }
-    
+
     handleSwipe(startX, endX) {
         const threshold = 50; // Minimum swipe distance
         const diff = startX - endX;
-        
+
         if (Math.abs(diff) < threshold) return;
-        
+
         if (diff > 0) {
             // Swipe left - next slide
             this.nextSlide();
@@ -1393,7 +1416,7 @@ class HeroSlider {
             // Swipe right - previous slide
             this.prevSlide();
         }
-        
+
         this.resetAutoPlay();
     }
 }
@@ -1413,7 +1436,7 @@ function currentSlide(index) {
 }
 
 // Initialize slider when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Only initialize if hero slider exists
     if (document.querySelector('.hero-slider')) {
         window.heroSlider = new HeroSlider();
@@ -1425,13 +1448,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function addSlideEffect(slideIndex, effect = 'fade') {
     const slide = document.querySelectorAll('.hero-slide')[slideIndex];
     if (!slide) return;
-    
+
     // Remove any existing effect classes
     slide.classList.remove('slide-left', 'slide-right', 'fade-up');
-    
+
     // Add the desired effect
     slide.classList.add(effect);
-    
+
     // Remove the effect class after animation completes
     setTimeout(() => {
         slide.classList.remove(effect);
@@ -1439,10 +1462,10 @@ function addSlideEffect(slideIndex, effect = 'fade') {
 }
 
 // Keyboard navigation
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     if (!window.heroSlider) return;
-    
-    switch(e.key) {
+
+    switch (e.key) {
         case 'ArrowLeft':
             heroSlider.prevSlide();
             heroSlider.resetAutoPlay();
@@ -1466,7 +1489,7 @@ document.addEventListener('keydown', function(e) {
 const heroObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (!window.heroSlider) return;
-        
+
         if (entry.isIntersecting) {
             heroSlider.startAutoPlay();
         } else {
@@ -1478,7 +1501,7 @@ const heroObserver = new IntersectionObserver((entries) => {
 });
 
 // Observe hero section
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
         heroObserver.observe(heroSection);
