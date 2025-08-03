@@ -76,8 +76,15 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .nav-menu {
@@ -141,6 +148,175 @@ body {
     border-radius: 2px;
 }
 
+/* Enhanced Mobile Menu CSS */
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: fixed;
+        /* Changed from absolute to fixed */
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 2rem;
+        border-radius: 0 0 25px 25px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-menu li {
+        margin: 0.5rem 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Staggered animation for menu items */
+    .nav-menu.active li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .nav-menu.active li:nth-child(2) {
+        transition-delay: 0.15s;
+    }
+
+    .nav-menu.active li:nth-child(3) {
+        transition-delay: 0.2s;
+    }
+
+    .nav-menu.active li:nth-child(4) {
+        transition-delay: 0.25s;
+    }
+
+    .nav-menu.active li:nth-child(5) {
+        transition-delay: 0.3s;
+    }
+
+    .nav-menu.active li:nth-child(6) {
+        transition-delay: 0.35s;
+    }
+
+    .nav-menu.active li:nth-child(7) {
+        transition-delay: 0.4s;
+    }
+
+    .nav-menu a {
+        padding: 1rem 1.5rem;
+        border-radius: 15px;
+        display: block;
+        text-align: center;
+        margin: 0.25rem 0;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .nav-menu a:hover {
+        background: rgba(81, 65, 181, 0.1);
+        border-color: rgba(81, 65, 181, 0.2);
+        transform: scale(1.02);
+    }
+
+    .mobile-menu {
+        display: flex;
+        position: relative;
+        z-index: 10000;
+    }
+
+    /* Enhanced hamburger animation */
+    .mobile-menu span {
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .mobile-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu.active span:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    .mobile-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+
+    /* Overlay when menu is open */
+    .nav-menu.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        animation: fadeIn 0.3s ease;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Desktop - ensure menu is always visible */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex !important;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .nav-menu li {
+        opacity: 1 !important;
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
 /* Enhanced Hero Section with Floating Elements */
 .hero {
     height: 100vh;
@@ -160,7 +336,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 50%, rgba(81, 65, 181, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(231, 111, 81, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 40% 80%, rgba(44, 90, 160, 0.2) 0%, transparent 50%);
@@ -168,8 +344,15 @@ body {
 }
 
 @keyframes gradientShift {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
 }
 
 /* Floating geometric shapes */
@@ -180,7 +363,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
         radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
         radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.08) 2px, transparent 2px),
         radial-gradient(circle at 45% 70%, rgba(255, 255, 255, 0.06) 1.5px, transparent 1.5px);
@@ -188,8 +371,13 @@ body {
 }
 
 @keyframes floatingDots {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(-100px) rotate(360deg); }
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+    }
 }
 
 .hero-content {
@@ -228,8 +416,15 @@ body {
 }
 
 @keyframes shimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 @keyframes scaleIn {
@@ -237,6 +432,7 @@ body {
         opacity: 0;
         transform: scale(0.5) rotateY(180deg);
     }
+
     100% {
         opacity: 1;
         transform: scale(1) rotateY(0deg);
@@ -248,6 +444,7 @@ body {
         opacity: 0;
         transform: translateX(-100px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -281,12 +478,15 @@ body {
         opacity: 0;
         transform: scale(0.3) translateY(50px);
     }
+
     50% {
         transform: scale(1.05) translateY(-10px);
     }
+
     70% {
         transform: scale(0.9) translateY(5px);
     }
+
     100% {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -392,7 +592,8 @@ body {
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 2s ease-in-out;
-    transform: scale(1.05); /* Slight zoom for Ken Burns effect */
+    transform: scale(1.05);
+    /* Slight zoom for Ken Burns effect */
     animation: kenBurns 12s ease-in-out infinite;
 }
 
@@ -405,15 +606,19 @@ body {
     0% {
         transform: scale(1.05) translateX(0px);
     }
+
     25% {
         transform: scale(1.08) translateX(-20px);
     }
+
     50% {
         transform: scale(1.1) translateX(0px);
     }
+
     75% {
         transform: scale(1.08) translateX(20px);
     }
+
     100% {
         transform: scale(1.05) translateX(0px);
     }
@@ -511,12 +716,12 @@ body {
     .hero-nav {
         display: none;
     }
-    
+
     .hero-dots {
         bottom: 20px;
         gap: 10px;
     }
-    
+
     .hero-dot {
         width: 10px;
         height: 10px;
@@ -541,6 +746,7 @@ body {
         transform: translateX(-100%) scale(1.05);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0) scale(1.05);
         opacity: 1;
@@ -552,6 +758,7 @@ body {
         transform: translateX(100%) scale(1.05);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0) scale(1.05);
         opacity: 1;
@@ -563,6 +770,7 @@ body {
         transform: translateY(50px) scale(1.05);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0) scale(1.05);
         opacity: 1;
@@ -572,7 +780,7 @@ body {
 /* Enhanced About Section with Staggered Animations */
 .about {
     padding: 8rem 0;
-    background: 
+    background:
         linear-gradient(135deg, var(--bg-light) 0%, #ffffff 50%, var(--bg-light) 100%);
     position: relative;
     overflow: hidden;
@@ -591,8 +799,13 @@ body {
 }
 
 @keyframes slowRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .container {
@@ -687,8 +900,15 @@ body {
 }
 
 @keyframes gradientMove {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .about-card::after {
@@ -715,7 +935,7 @@ body {
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
 }
 
-.about-card > * {
+.about-card>* {
     position: relative;
     z-index: 1;
 }
@@ -749,7 +969,7 @@ body {
 /* Enhanced Services Section */
 .services {
     padding: 8rem 0;
-    background: 
+    background:
         linear-gradient(135deg, #ffffff 0%, var(--bg-light) 50%, #ffffff 100%);
     position: relative;
 }
@@ -766,8 +986,13 @@ body {
 }
 
 @keyframes moveGrain {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-100px, -100px); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100px, -100px);
+    }
 }
 
 .services-grid {
@@ -879,7 +1104,7 @@ body {
 /* Enhanced Messages Section */
 .messages {
     padding: 8rem 0;
-    background: 
+    background:
         linear-gradient(135deg, var(--bg-light) 0%, #f0f2f5 50%, var(--bg-light) 100%);
     position: relative;
     overflow: hidden;
@@ -892,15 +1117,22 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 10% 20%, rgba(81, 65, 181, 0.1) 0%, transparent 30%),
         radial-gradient(circle at 90% 80%, rgba(231, 111, 81, 0.1) 0%, transparent 30%);
     animation: breathe 6s ease-in-out infinite;
 }
 
 @keyframes breathe {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .messages-grid {
@@ -1028,6 +1260,7 @@ body {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
+
     100% {
         transform: translate(-50%, -50%) scale(1.8);
         opacity: 0;
@@ -1167,7 +1400,7 @@ body {
 /* Enhanced Events Section */
 .events {
     padding: 8rem 0;
-    background: 
+    background:
         linear-gradient(135deg, var(--bg-light) 0%, #ffffff 50%, var(--bg-light) 100%);
     position: relative;
     overflow: hidden;
@@ -1186,8 +1419,13 @@ body {
 }
 
 @keyframes slowRotateReverse {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(-360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
 }
 
 .events-container {
@@ -1274,7 +1512,7 @@ body {
 /* Enhanced Leadership Section */
 .leadership {
     padding: 8rem 0;
-    background: 
+    background:
         linear-gradient(135deg, #ffffff 0%, var(--bg-light) 50%, #ffffff 100%);
     position: relative;
     overflow: hidden;
@@ -1287,7 +1525,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 30% 20%, rgba(81, 65, 181, 0.08) 0%, transparent 50%),
         radial-gradient(circle at 70% 80%, rgba(231, 111, 81, 0.08) 0%, transparent 50%);
 }
@@ -1477,7 +1715,7 @@ body {
 /* Enhanced Contact Section */
 .contact {
     padding: 8rem 0;
-    background: 
+    background:
         linear-gradient(135deg, #1a1a1a 0%, #000000 100%),
         url('/images/contact-pattern.jpg') center/cover;
     color: white;
@@ -1492,15 +1730,22 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 30%, rgba(81, 65, 181, 0.2) 0%, transparent 50%),
         radial-gradient(circle at 80% 70%, rgba(231, 111, 81, 0.2) 0%, transparent 50%);
     animation: contactGlow 8s ease-in-out infinite;
 }
 
 @keyframes contactGlow {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .contact .section-header h2 {
@@ -1520,7 +1765,7 @@ body {
     z-index: 2;
 }
 
-.contact-grid > div {
+.contact-grid>div {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -1530,7 +1775,7 @@ body {
     transition: all 0.4s ease;
 }
 
-.contact-grid > div:hover {
+.contact-grid>div:hover {
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-10px);
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
@@ -1607,7 +1852,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 30% 50%, rgba(81, 65, 181, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 70% 50%, rgba(231, 111, 81, 0.1) 0%, transparent 50%);
 }
@@ -1701,6 +1946,7 @@ body {
         opacity: 0;
         transform: translateY(60px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1708,9 +1954,12 @@ body {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -1733,26 +1982,43 @@ body {
 }
 
 /* Staggered animations for grid items */
-.fade-in:nth-child(1) { transition-delay: 0.1s; }
-.fade-in:nth-child(2) { transition-delay: 0.2s; }
-.fade-in:nth-child(3) { transition-delay: 0.3s; }
-.fade-in:nth-child(4) { transition-delay: 0.4s; }
-.fade-in:nth-child(5) { transition-delay: 0.5s; }
-.fade-in:nth-child(6) { transition-delay: 0.6s; }
+.fade-in:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.fade-in:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.fade-in:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.fade-in:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.fade-in:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.fade-in:nth-child(6) {
+    transition-delay: 0.6s;
+}
 
 /* Enhanced Responsive Design */
 @media (max-width: 1024px) {
     .hero h1 {
         font-size: clamp(2.5rem, 6vw, 4rem);
     }
-    
+
     .about-grid,
     .services-grid,
     .messages-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
     }
-    
+
     .leadership-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
@@ -1772,15 +2038,15 @@ body {
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
-    
+
     .nav-menu.active {
         display: flex;
     }
-    
+
     .nav-menu li {
         margin: 0.5rem 0;
     }
-    
+
     .nav-menu a {
         padding: 1rem;
         border-radius: 15px;
@@ -1795,7 +2061,7 @@ body {
     .hero {
         padding: 0 1rem;
     }
-    
+
     .hero h1 {
         font-size: clamp(2rem, 8vw, 3rem);
     }
@@ -1809,7 +2075,7 @@ body {
         align-items: center;
         gap: 1rem;
     }
-    
+
     .btn {
         width: 100%;
         max-width: 300px;
@@ -1819,7 +2085,7 @@ body {
     .section-header h2 {
         font-size: clamp(1.8rem, 6vw, 2.5rem);
     }
-    
+
     .about-grid,
     .services-grid,
     .messages-grid,
@@ -1827,7 +2093,7 @@ body {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .leadership-grid {
         grid-template-columns: 1fr;
     }
@@ -1835,7 +2101,7 @@ body {
     .container {
         padding: 0 1rem;
     }
-    
+
     .about,
     .services,
     .messages,
@@ -1844,29 +2110,29 @@ body {
     .contact {
         padding: 4rem 0;
     }
-    
+
     .elder-card {
         flex-direction: column;
     }
-    
+
     .elder-photo {
         width: 100%;
         height: 300px;
         border-right: none;
         border-bottom: 5px solid var(--secondary-color);
     }
-    
+
     .elder-content {
         width: 100%;
         text-align: center;
         padding: 2rem;
     }
-    
+
     .footer-links {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .social-links a {
         width: 50px;
         height: 50px;
@@ -1878,11 +2144,11 @@ body {
     .nav-container {
         padding: 0 1rem;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .about-card,
     .service-card,
     .message-card,
@@ -1890,11 +2156,11 @@ body {
     .team-card {
         margin: 0 0.5rem;
     }
-    
-    .contact-grid > div {
+
+    .contact-grid>div {
         padding: 2rem;
     }
-    
+
     .btn {
         padding: 1rem 1.5rem;
         font-size: 1rem;
@@ -1952,8 +2218,13 @@ body {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Particle Effect */
@@ -1981,12 +2252,15 @@ body {
         transform: translateY(100vh) translateX(0) rotate(0deg);
         opacity: 0;
     }
+
     10% {
         opacity: 1;
     }
+
     90% {
         opacity: 1;
     }
+
     100% {
         transform: translateY(-100px) translateX(100px) rotate(360deg);
         opacity: 0;
@@ -2079,8 +2353,13 @@ body {
 }
 
 @keyframes modalFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes modalSlideIn {
@@ -2088,6 +2367,7 @@ body {
         transform: translateY(-100px) scale(0.8);
         opacity: 0;
     }
+
     to {
         transform: translateY(0) scale(1);
         opacity: 1;
@@ -2238,22 +2518,41 @@ body {
 }
 
 @keyframes glitch-1 {
-    0%, 14%, 15%, 49%, 50%, 99%, 100% {
+
+    0%,
+    14%,
+    15%,
+    49%,
+    50%,
+    99%,
+    100% {
         transform: translate(0);
         opacity: 0;
     }
-    15%, 49% {
+
+    15%,
+    49% {
         transform: translate(-2px, -2px);
         opacity: 1;
     }
 }
 
 @keyframes glitch-2 {
-    0%, 19%, 20%, 39%, 40%, 79%, 80%, 100% {
+
+    0%,
+    19%,
+    20%,
+    39%,
+    40%,
+    79%,
+    80%,
+    100% {
         transform: translate(0);
         opacity: 0;
     }
-    20%, 39% {
+
+    20%,
+    39% {
         transform: translate(2px, 2px);
         opacity: 1;
     }
@@ -2270,9 +2569,11 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -2305,9 +2606,12 @@ body {
 }
 
 @keyframes fabPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 10px 30px rgba(81, 65, 181, 0.4);
     }
+
     50% {
         box-shadow: 0 10px 30px rgba(81, 65, 181, 0.4), 0 0 0 10px rgba(81, 65, 181, 0.1);
     }
@@ -2346,25 +2650,26 @@ body {
 
 /* Print Styles */
 @media print {
+
     .navbar,
     .fab,
     .youtube-modal,
     .page-loading {
         display: none !important;
     }
-    
+
     .hero {
         height: 50vh;
         background: var(--bg-light) !important;
         color: var(--text-dark) !important;
     }
-    
+
     .hero h1,
     .hero h2,
     .hero p {
         color: var(--text-dark) !important;
     }
-    
+
     .about,
     .services,
     .messages,
@@ -2372,12 +2677,12 @@ body {
     .leadership {
         padding: 2rem 0 !important;
     }
-    
+
     .contact {
         background: var(--bg-light) !important;
         color: var(--text-dark) !important;
     }
-    
+
     .footer {
         background: var(--text-dark) !important;
     }
@@ -2393,11 +2698,11 @@ body {
         --text-light: #333333;
         --bg-light: #ffffff;
     }
-    
+
     .hero {
         background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), var(--bg-light);
     }
-    
+
     .about-card,
     .service-card,
     .message-card,
@@ -2408,6 +2713,7 @@ body {
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -2416,7 +2722,7 @@ body {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    
+
     .hero::before,
     .hero::after,
     .about::before,
@@ -2427,7 +2733,7 @@ body {
     .contact::before {
         animation: none;
     }
-    
+
     .floating {
         animation: none;
     }
