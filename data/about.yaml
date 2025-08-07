@@ -1,24 +1,50 @@
 features:
-  - icon: "fas fa-bible"
-    title: "Biblical Teaching"
-    description: "We believe in the power of God's Word and provide expository preaching that helps believers grow in their understanding of Scripture."
-  
-  - icon: "fas fa-hands-praying"
-    title: "Prayer & Worship"
-    description: "Our worship services blend traditional Nepali music with contemporary praise, creating a heartfelt atmosphere of worship."
-  
-  - icon: "fas fa-users"
-    title: "Community Fellowship"
-    description: "We foster deep relationships through small groups, cultural events, and community service projects."
-  
-  - icon: "fas fa-seedling"
-    title: "Spiritual Growth"
-    description: "Through discipleship programs and mentoring, we help each member develop their relationship with Christ."
-  
-  - icon: "fas fa-heart"
-    title: "Community Service"
-    description: "We actively serve our local community through outreach programs, food drives, and support for those in need."
-  
-  - icon: "fas fa-globe-asia"
-    title: "Cultural Heritage"
-    description: "We celebrate our Nepali heritage while embracing our identity as followers of Christ in our new homeland."
+  en:
+    - icon: "fas fa-bible"
+      title: "Biblical Teaching"
+      description: "We believe in the power of God's Word and provide expository preaching that helps believers grow in their understanding of Scripture."
+    
+    - icon: "fas fa-hands-praying"
+      title: "Prayer & Worship"
+      description: "Our worship services blend traditional Nepali music with contemporary praise, creating a heartfelt atmosphere of worship."
+    
+    - icon: "fas fa-users"
+      title: "Community Fellowship"
+      description: "We foster deep relationships through small groups, cultural events, and community service projects."
+    
+    - icon: "fas fa-seedling"
+      title: "Spiritual Growth"
+      description: "Through discipleship programs and mentoring, we help each member develop their relationship with Christ."
+    
+    - icon: "fas fa-heart"
+      title: "Community Service"
+      description: "We actively serve our local community through outreach programs, food drives, and support for those in need."
+    
+    - icon: "fas fa-globe-asia"
+      title: "Cultural Heritage"
+      description: "We celebrate our Nepali heritage while embracing our identity as followers of Christ in our new homeland."
+
+  ne:
+    - icon: "fas fa-bible"
+      title: "बाइबलीय शिक्षा"
+      description: "हामी परमेश्वरको वचनको शक्तिमा विश्वास गर्छौं र व्याख्यात्मक प्रचार प्रदान गर्छौं जसले विश्वासीहरूलाई धर्मशास्त्रको बुझाइमा बढ्न मद्दत गर्छ।"
+    
+    - icon: "fas fa-hands-praying"
+      title: "प्रार्थना र आराधना"
+      description: "हाम्रो आराधना सेवाले परम्परागत नेपाली संगीतलाई समकालीन स्तुतिसँग मिसाएर आराधनाको हार्दिक वातावरण सिर्जना गर्छ।"
+    
+    - icon: "fas fa-users"
+      title: "सामुदायिक संगति"
+      description: "हामी साना समूहहरू, सांस्कृतिक कार्यक्रमहरू, र सामुदायिक सेवा परियोजनाहरू मार्फत गहिरो सम्बन्धहरू बढाउँछौं।"
+    
+    - icon: "fas fa-seedling"
+      title: "आत्मिकि वृद्धि"
+      description: "शिष्यत्व कार्यक्रमहरू र मार्गदर्शन मार्फत, हामी प्रत्येक सदस्यलाई ख्रीष्टसँगको उनीहरूको सम्बन्ध विकास गर्न मद्दत गर्छौं।"
+    
+    - icon: "fas fa-heart"
+      title: "सामुदायिक सेवा"
+      description: "हामी आउटरिच कार्यक्रमहरू, खाना वितरण, र खाँचोमा परेकाहरूको सहायता मार्फत हाम्रो स्थानीय समुदायको सक्रिय सेवा गर्छौं।"
+    
+    - icon: "fas fa-globe-asia"
+      title: "सांस्कृतिक सम्पदा"
+      description: "हामी हाम्रो नयाँ भूमिमा ख्रीष्टका अनुयायीहरूको रूपमा हाम्रो पहिचान अँगाल्दै हाम्रो नेपाली विरासत मनाउँछौं।"

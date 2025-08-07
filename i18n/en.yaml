@@ -1,0 +1,77 @@
+- id: join_us_this
+  translation: "Join us this"
+
+- id: sunday
+  translation: "SUNDAY"
+
+- id: time_1pm
+  translation: "1 PM"
+
+- id: join_worship
+  translation: "Join Worship"
+
+- id: learn_more
+  translation: "Learn More"
+
+- id: about_ministry_title
+  translation: "About Our Ministry"
+
+- id: about_ministry_desc
+  translation: "We are a loving community of Nepali believers dedicated to growing in faith, fellowship, and service to our Lord Jesus Christ."
+
+- id: worship_programs_title
+  translation: "Worship Services & Programs"
+
+- id: worship_programs_desc
+  translation: "Join us for meaningful worship experiences and programs designed to strengthen our faith community."
+
+- id: recent_messages_title
+  translation: "Recent Messages"
+
+- id: recent_messages_desc
+  translation: "Watch our latest sermons and teachings that inspire and strengthen our faith journey."
+
+- id: view_all_messages
+  translation: "View all Messages"
+
+- id: upcoming_events_title
+  translation: "Upcoming Events"
+
+- id: upcoming_events_desc
+  translation: "Stay connected with our community through these upcoming events and activities."
+
+- id: meet_pastors_title
+  translation: "Meet Our Pastors & Elders"
+
+- id: meet_pastors_desc
+  translation: "Get to know the dedicated leaders who shepherd, teach, and care for our church family. Our pastors and elders are committed to guiding us in faith, prayer, and service as we grow together in Christ."
+
+- id: visit_us_title
+  translation: "Visit Us"
+
+- id: service_times_title
+  translation: "Service Times"
+
+- id: sunday_service
+  translation: "Sunday Service"
+
+- id: youth_meet
+  translation: "Youth Meet"
+
+- id: home_fellowship
+  translation: "Home Fellowship"
+
+- id: get_in_touch
+  translation: "Get in Touch"
+
+- id: contact_description
+  translation: "We'd love to hear from you and welcome you into our church family."
+
+- id: contact_info_title
+  translation: "Contact Information"
+
+- id: connect_title
+  translation: "Connect With Us"
+
+- id: connect_desc
+  translation: "Follow us on social media to stay updated with our latest events and messages."

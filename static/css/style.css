@@ -90,13 +90,12 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: var(--text-dark);
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
     position: relative;
     padding: 0.5rem 1rem;
@@ -2569,33 +2568,3 @@ body {
         animation: none;
     }
 }
-
-/* Dark Mode Support */
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --text-dark: #ffffff;
-        --text-light: #cccccc;
-        --bg-light: #1a1a1a;
-        --white: #000000;
-    }
-    
-    .navbar {
-        background: rgba(0, 0, 0, 0.9);
-    }
-    
-    .about,
-    .services,
-    .events,
-    .leadership {
-        background: var(--bg-light);
-    }
-    
-    .about-card,
-    .service-card,
-    .message-card,
-    .team-card,
-    .elder-card {
-        background: rgba(0, 0, 0, 0.8);
-        color: var(--text-dark);
-    }
-} */

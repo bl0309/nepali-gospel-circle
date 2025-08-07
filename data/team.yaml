@@ -1,15 +1,32 @@
 team:
-  - name: "Ps. Rajendra and Ruby Thapa"
-    title: "Lead Pastors"
-    image: "/images/leaders/lead_pastor.jpg"
-    description: "Greetings in the name of our Lord Jesus Christ! At Nepali Gospel Circle, we are passionate about building a Christ-centered community that reflects God’s love and truth. My heart is to see each person grow in their personal relationship with Jesus, be rooted in the Word, empowered by the Holy Spirit, and walk in love and service. Whether you're new to faith or seeking a deeper walk, you are welcome here, this is a place where you belong. WELCOME HOME"
+  en:
+    - name: "Ps. Rajendra and Ruby Thapa"
+      title: "Lead Pastors"
+      image: "/images/leaders/lead_pastor.jpg"
+      description: "Greetings in the name of our Lord Jesus Christ! At Nepali Gospel Circle, we are passionate about building a Christ-centered community that reflects God’s love and truth. My heart is to see each person grow in their personal relationship with Jesus, be rooted in the Word, empowered by the Holy Spirit, and walk in love and service. Whether you're new to faith or seeking a deeper walk, you are welcome here, this is a place where you belong. WELCOME HOME"
 
-  - name: "Ps. Armando and Rose Escobedo"
-    title: "Asst. Pastors"
-    image: "/images/leaders/asst_pastor.jpg"
-    description: "We count it a joy and privilege to serve alongside our Lead Pastor and elders in caring for the spiritual growth of our church family. Our calling as assistant pastors is to shepherd, disciple, and walk with you through every season of life, whether it’s through teaching, prayer, youth leadership, or family support. We are here to encourage your journey of faith, and we believe that God has great things in store for your life and calling. Let us grow together in grace, truth, and love."
+    - name: "Ps. Armando and Rose Escobedo"
+      title: "Asst. Pastors"
+      image: "/images/leaders/asst_pastor.jpg"
+      description: "We count it a joy and privilege to serve alongside our Lead Pastor and elders in caring for the spiritual growth of our church family. Our calling as assistant pastors is to shepherd, disciple, and walk with you through every season of life, whether it’s through teaching, prayer, youth leadership, or family support. We are here to encourage your journey of faith, and we believe that God has great things in store for your life and calling. Let us grow together in grace, truth, and love."
 
-  - name: "Meet Our Elders"
-    title: "Elders"
-    image: "/images/leaders/elders.jpg"
-    description: "Our elders are faithful servants who support the vision of the church through prayer, teaching, leadership, and care for the body of Christ. Together, we are committed to equipping the saints, nurturing spiritual growth, and encouraging every member to live out the Gospel in daily life."
+    - name: "Meet Our Elders"
+      title: "Elders"
+      image: "/images/leaders/elders.jpg"
+      description: "Our elders are faithful servants who support the vision of the church through prayer, teaching, leadership, and care for the body of Christ. Together, we are committed to equipping the saints, nurturing spiritual growth, and encouraging every member to live out the Gospel in daily life."
+  
+  ne:
+    - name: "पा. राजेन्द्र र रुबी थापा"
+      title: "मुख्य पास्टरहरू"
+      image: "/images/leaders/lead_pastor.jpg"
+      description: "हाम्रा प्रभु येशू ख्रीष्टको नाममा अभिवादन! नेपाली गस्पेल सर्कलमा, हामी परमेश्वरको प्रेम र सत्यलाई झल्काउने ख्रीष्ट-केन्द्रित समुदाय निर्माण गर्न भावुक छौं। मेरो हृदयको इच्छा प्रत्येक व्यक्तिलाई येशूसँगको व्यक्तिगत सम्बन्धमा बढेको, वचनमा जरा गाडेको, पवित्र आत्माद्वारा सशक्त भएको, र प्रेम र सेवामा हिंडेको देख्नु हो। तपाईं विश्वासमा नयाँ हुनुहुन्छ वा गहिरो हिंडाइ खोज्दै हुनुहुन्छ, तपाईं यहाँ स्वागत हुनुहुन्छ, यो तपाईंको ठाउँ हो। घर फर्कनुभएकोमा स्वागत छ!"
+
+    - name: "पा. आर्मान्डो र रोज एस्कोबेडो"
+      title: "सहायक पास्टरहरू"
+      image: "/images/leaders/asst_pastor.jpg"
+      description: "हामी हाम्रो मुख्य पास्टर र एल्डरहरूसँग मिलेर हाम्रो चर्च परिवारको आत्मिकि वृद्धिको हेरचाह गर्न सेवा गर्नुलाई आनन्द र विशेषाधिकार मान्छौं। सहायक पास्टरहरूको रूपमा हाम्रो बोलावट भनेको गोठालो बन्नु, शिष्य बनाउनु, र जीवनका हरेक मौसममा तपाईंसँग हिंड्नु हो, चाहे त्यो शिक्षा, प्रार्थना, युवा नेतृत्व, वा पारिवारिक सहयोग मार्फत होस्। हामी तपाईंको विश्वासको यात्रालाई प्रोत्साहन दिन यहाँ छौं, र हामी विश्वास गर्छौं कि परमेश्वरले तपाईंको जीवन र बोलावटको लागि महान् कुराहरू भण्डार गर्नुभएको छ। आउनुहोस् अनुग्रह, सत्य, र प्रेममा सँगै बढौं।"
+
+    - name: "हाम्रा एल्डरहरूलाई भेट्नुहोस्"
+      title: "एल्डरहरू"
+      image: "/images/leaders/elders.jpg"
+      description: "हाम्रा एल्डरहरू विश्वासयोग्य सेवकहरू हुन् जसले प्रार्थना, शिक्षा, नेतृत्व, र ख्रीष्टको शरीरको हेरचाह मार्फत चर्चको दर्शनलाई समर्थन गर्छन्। सँगै, हामी सेवकहरुलाई तयार पार्न, आत्मिकि वृद्धिलाई पोषण गर्न, र हरेक सदस्यलाई दैनिक जीवनमा सुसमाचार बाँच्न प्रोत्साहन दिन प्रतिबद्ध छौं।"

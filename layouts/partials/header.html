@@ -8,10 +8,13 @@
             <li><a href="{{ .URL }}">{{ .Name }}</a></li>
             {{ end }}
         </ul>
-        <div class="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-actions">
+            {{ partial "language-switcher.html" . }}
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </div>
 </nav>

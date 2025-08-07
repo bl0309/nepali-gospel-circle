@@ -1,0 +1,158 @@
+<div class="language-switcher">
+    <div class="language-dropdown">
+        <button class="language-toggle" id="languageToggle">
+            <i class="fas fa-globe"></i>
+            <span class="current-lang">{{ .Site.Language.LanguageName }}</span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="language-menu" id="languageMenu">
+            {{ if eq .Site.Language.Lang "en" }}
+                <a href="/ne/" class="language-option" data-lang="ne">
+                    <span class="flag flag-ne"></span>
+                    नेपाली
+                </a>
+            {{ else }}
+                <a href="/" class="language-option" data-lang="en">
+                    <span class="flag flag-en"></span>
+                    English
+                </a>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<style>
+/* Language Switcher Styles */
+.language-switcher {
+    position: relative;
+    z-index: 1001;
+}
+
+.language-dropdown {
+    position: relative;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(81, 65, 181, 0.1);
+    border: 1px solid rgba(81, 65, 181, 0.2);
+    color: var(--text-dark);
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.language-toggle:hover {
+    background: rgba(81, 65, 181, 0.2);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    color: var(--secondary-color);
+}
+
+.language-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1002;
+    margin-top: 0.5rem;
+}
+
+.language-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    margin: 0.25rem;
+}
+
+.language-option:hover {
+    background: var(--bg-light);
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+.flag {
+    width: 20px;
+    height: 15px;
+    border-radius: 3px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+}
+
+.flag-en {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900"><rect width="7410" height="3900" fill="%23b22234"/><path d="M0,450H7410m0,300H0m0,300H7410m0,300H0m0,300H7410m0,300H0" stroke="%23fff" stroke-width="300"/><rect width="2964" height="2100" fill="%23002868"/><g fill="%23fff"><g id="s18"><g id="s9"><g id="s5"><g id="s4"><path id="s" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="%23s" y="420"/><use href="%23s" y="840"/><use href="%23s" y="1260"/></g><use href="%23s" y="1680"/></g><use href="%23s4" x="247" y="210"/></g><use href="%23s9" x="494"/></g><use href="%23s18" x="988"/><use href="%23s9" x="1976"/><use href="%23s5" x="2470"/></g></svg>');
+}
+
+.flag-ne {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><defs><clipPath id="a"><path d="M0,0 L4,0 L4,2.5 L2,2.5 L2,5 L0,5 Z"/></clipPath></defs><rect width="4" height="5" fill="%23003893" clip-path="url(%23a)"/><rect width="4" height="2.5" fill="%23DC143C" clip-path="url(%23a)"/><path d="M0,0 L3,1.25 L0,2.5 Z M0,2.5 L1.5,3.75 L0,5 Z" fill="%23fff" clip-path="url(%23a)"/><circle cx="1.2" cy="1" r="0.3" fill="%23fff"/><circle cx="1.2" cy="1" r="0.2" fill="%23003893"/><path d="M0.9,1.3 L1.5,1.3 L1.2,1.6 Z" fill="%23fff"/><circle cx="0.6" cy="3.8" r="0.15" fill="%23fff"/><path d="M0.4,3.5 Q0.6,3.3 0.8,3.5 Q0.6,3.7 0.4,3.5 Z" fill="%23fff"/></svg>');
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .language-switcher {
+        order: -1; /* Show before hamburger menu */
+        margin-right: 1rem;
+    }
+    
+    .language-toggle {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+    
+    .current-lang {
+        display: none; /* Hide text, show only globe icon on mobile */
+    }
+}
+</style>
+
+<script>
+// Language Switcher JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const languageToggle = document.getElementById('languageToggle');
+    const languageMenu = document.getElementById('languageMenu');
+    
+    if (languageToggle && languageMenu) {
+        languageToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            languageMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!languageToggle.contains(e.target) && !languageMenu.contains(e.target)) {
+                languageMenu.classList.remove('active');
+            }
+        });
+        
+        // Close menu when pressing Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                languageMenu.classList.remove('active');
+            }
+        });
+    }
+});
+</script>

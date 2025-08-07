@@ -884,34 +884,6 @@ class PerformanceMonitor {
 
 // Enhanced Accessibility Features
 function enhanceAccessibility() {
-    // Skip navigation link
-    const skipLink = document.createElement('a');
-    skipLink.href = '#main';
-    skipLink.textContent = 'Skip to main content';
-    skipLink.className = 'skip-link';
-    skipLink.style.cssText = `
-        position: absolute;
-        top: -40px;
-        left: 6px;
-        background: var(--secondary-color);
-        color: white;
-        padding: 8px;
-        text-decoration: none;
-        border-radius: 4px;
-        z-index: 10000;
-        transition: top 0.3s ease;
-    `;
-
-    skipLink.addEventListener('focus', () => {
-        skipLink.style.top = '6px';
-    });
-
-    skipLink.addEventListener('blur', () => {
-        skipLink.style.top = '-40px';
-    });
-
-    document.body.insertBefore(skipLink, document.body.firstChild);
-
     // Enhanced keyboard navigation
     document.addEventListener('keydown', (e) => {
         // Tab key navigation enhancement

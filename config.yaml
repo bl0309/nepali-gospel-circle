@@ -1,6 +1,73 @@
 baseURL: 'https://nepaligospelcircle.com/'
-languageCode: 'en-us'
+defaultContentLanguage: 'en'
+defaultContentLanguageInSubdir: false
 title: 'Nepali Gospel Circle'
+
+# Language configuration
+languages:
+  en:
+    languageCode: 'en-US'
+    languageName: 'English'
+    title: 'Nepali Gospel Circle'
+    weight: 1
+    params:
+      description: 'A vibrant community of faith where Nepali speaking believers come together to worship, grow, and serve God with joyful hearts.'
+      author: 'Nepali Gospel Circle'
+    menu:
+      main:
+        - name: "Home"
+          url: "/"
+          weight: 10
+        - name: "About" 
+          url: "/#about"
+          weight: 20
+        - name: "Services"
+          url: "/#services" 
+          weight: 30
+        - name: "Messages"
+          url: "/#messages"
+          weight: 40
+        - name: "Events"
+          url: "/#events"
+          weight: 50
+        - name: "Meet Us"
+          url: "/#leadership"
+          weight: 60
+        - name: "Contact"
+          url: "/#contact"
+          weight: 70
+  
+  ne:
+    languageCode: 'ne-NP'
+    languageName: 'नेपाली'
+    title: 'नेपाली गस्पल सर्कल'
+    weight: 2
+    params:
+      description: 'विश्वास को जीवन्त समुदाय जहाँ नेपाली भाषी विश्वासीहरू एकसाथ आएर परमेश्वरको आराधना गर्छन्, बढ्छन् र सेवा गर्छन्।'
+      author: 'नेपाली गस्पल सर्कल'
+    menu:
+      main:
+        - name: "गृह"
+          url: "/ne/"
+          weight: 10
+        - name: "बारेमा" 
+          url: "/ne/#about"
+          weight: 20
+        - name: "सेवाहरू"
+          url: "/ne/#services" 
+          weight: 30
+        - name: "प्रचारहरु"
+          url: "/ne/#messages"
+          weight: 40
+        - name: "कार्यक्रमहरू"
+          url: "/ne/#events"
+          weight: 50
+        - name: "हामीलाई भेट्नुहोस्"
+          url: "/ne/#leadership"
+          weight: 60
+        - name: "सम्पर्क"
+          url: "/ne/#contact"
+          weight: 70
 
 # Performance optimizations
 minify:
@@ -19,9 +86,6 @@ imaging:
   anchor: "smart"
 
 params:
-  description: 'A vibrant community of faith where Nepali speaking believers come together to worship, grow, and serve God with joyful hearts.'
-  author: 'Nepali Gospel Circle'
-
   # YouTube Channel
   youtube_channel: "https://www.youtube.com/@NepaliGospelCircle/streams"
   
@@ -48,30 +112,6 @@ params:
     facebook: "https://www.facebook.com/nepaligospelcircle"
     instagram: "https://www.instagram.com/nepaligospelcircle?igsh=MWl1bjNwMnl0bnh4dg=="
     youtube: "https://www.youtube.com/@NepaliGospelCircle"
-
-menu:
-  main:
-    - name: "Home"
-      url: "/"
-      weight: 10
-    - name: "About" 
-      url: "/#about"
-      weight: 20
-    - name: "Services"
-      url: "/#services" 
-      weight: 30
-    - name: "Messages"
-      url: "/#messages"
-      weight: 40
-    - name: "Events"
-      url: "/#events"
-      weight: 50
-    - name: "Meet Us"
-      url: "/#leadership"
-      weight: 60
-    - name: "Contact"
-      url: "/#contact"
-      weight: 70
 
 markup:
   goldmark:

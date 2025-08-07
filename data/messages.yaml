@@ -1,40 +1,82 @@
 recent:
-  - youtube_id: "A83hIT2HOGo"  # Extract from YouTube URL
-    title: "Resurrection Day: Christ’s Victory Over Sin and Death"
-    speaker: "Ps. Rajendra Thapa"
-    date: "July 28, 2025"
-    duration: "32:45"
-    description: "Explore what it means to walk by faith and not by sight, drawing lessons from biblical examples of unwavering trust in God."
-    tags: ["Faith", "Trust", "Biblical Teaching"]
+  en:
+    - youtube_id: "A83hIT2HOGo"  # Extract from YouTube URL
+      title: "Resurrection Day: Christ’s Victory Over Sin and Death"
+      speaker: "Ps. Rajendra Thapa"
+      date: "July 28, 2025"
+      duration: "32:45"
+      description: "Explore what it means to walk by faith and not by sight, drawing lessons from biblical examples of unwavering trust in God."
+      tags: ["Faith", "Trust", "Biblical Teaching"]
+    
+    - youtube_id: "gy8LYFBeqH8"
+      title: "Faith Takes Actions"
+      speaker: "Ps. Rajendra Thapa"
+      date: "July 21, 2025"
+      duration: "1:28:30"
+      description: "Discover how God designed us for community and the transformative power of fellowship in our spiritual growth."
+      tags: ["Community", "Fellowship", "Growth"]
+    
+    - youtube_id: "M45A822rCV0"
+      title: "Pretending vs. Believing"
+      speaker: "Ps. Armando and Rose Escobedo"
+      date: "July 14, 2025"
+      duration: "35:20"
+      description: "Understanding the depth of God's grace and how it has the power to completely transform our lives and relationships."
+      tags: ["Grace", "Transformation", "Salvation"]
+    
+    - youtube_id: "vmoiZVxByrY"
+      title: "Where are you on the journey of Faith?"
+      speaker: "Ps. Rajendra Thapa"
+      date: "July 7, 2025"
+      duration: "41:15"
+      description: "Finding hope and strength through God's promises during life's most challenging seasons."
+      tags: ["Hope", "Encouragement", "Trials"]
+    
+    - youtube_id: "kq65YbsFJQ4"
+      title: "Father's Day Special Message"
+      speaker: "Ps. Ruby Thapa"
+      date: "July 7, 2025"
+      duration: "41:15"
+      description: "Finding hope and strength through God's promises during life's most challenging seasons."
+      tags: ["Hope", "Encouragement", "Trials"]
   
-  - youtube_id: "gy8LYFBeqH8"
-    title: "Faith Takes Actions"
-    speaker: "Ps. Rajendra Thapa"
-    date: "July 21, 2025"
-    duration: "1:28:30"
-    description: "Discover how God designed us for community and the transformative power of fellowship in our spiritual growth."
-    tags: ["Community", "Fellowship", "Growth"]
-  
-  - youtube_id: "M45A822rCV0"
-    title: "Pretending vs. Believing"
-    speaker: "Ps. Armando and Rose Escobedo"
-    date: "July 14, 2025"
-    duration: "35:20"
-    description: "Understanding the depth of God's grace and how it has the power to completely transform our lives and relationships."
-    tags: ["Grace", "Transformation", "Salvation"]
-  
-  - youtube_id: "vmoiZVxByrY"
-    title: "Where are you on the journey of Faith?"
-    speaker: "Ps. Rajendra Thapa"
-    date: "July 7, 2025"
-    duration: "41:15"
-    description: "Finding hope and strength through God's promises during life's most challenging seasons."
-    tags: ["Hope", "Encouragement", "Trials"]
-  
-  - youtube_id: "kq65YbsFJQ4"
-    title: "Father's Day Special Message"
-    speaker: "Ps. Ruby Thapa"
-    date: "July 7, 2025"
-    duration: "41:15"
-    description: "Finding hope and strength through God's promises during life's most challenging seasons."
-    tags: ["Hope", "Encouragement", "Trials"]
+  ne:
+    - youtube_id: "A83hIT2HOGo"
+      title: "पुनरुत्थान दिन: पाप र मृत्युमाथि ख्रीष्टको विजय"
+      speaker: "पास्टर राजेन्द्र थापा"
+      date: "जुलाई २८, २०२५"
+      duration: "३२:४५"
+      description: "विश्वासद्वारा हिंड्नु र दृष्टिले नभएर भन्नुको अर्थ के हो भनेर खोज्नुहोस्, परमेश्वरमा अटुट भरोसाका बाइबलीय उदाहरणहरूबाट सिकाइ लिँदै।"
+      tags: ["विश्वास", "भरोसा", "बाइबलीय शिक्षा"]
+    
+    - youtube_id: "gy8LYFBeqH8"
+      title: "विश्वासले कार्य गर्छ"
+      speaker: "पास्टर राजेन्द्र थापा"
+      date: "जुलाई २१, २०२५"
+      duration: "१:२८:३०"
+      description: "परमेश्वरले हामीलाई कसरी समुदायको लागि डिजाइन गर्नुभयो र हाम्रो आध्यात्मिक वृद्धिमा संगतिको परिवर्तनकारी शक्ति पत्ता लगाउनुहोस्।"
+      tags: ["समुदाय", "संगति", "वृद्धि"]
+    
+    - youtube_id: "M45A822rCV0"
+      title: "बहाना गर्नु बनाम विश्वास गर्नु"
+      speaker: "पास्टर आर्मान्डो र रोज एस्कोबेडो"
+      date: "जुलाई १४, २०२५"
+      duration: "३५:२०"
+      description: "परमेश्वरको अनुग्रहको गहिराइ र कसरी यसले हाम्रो जीवन र सम्बन्धहरूलाई पूर्ण रूपमा रूपान्तरण गर्ने शक्ति राख्छ भनेर बुझ्नुहोस्।"
+      tags: ["अनुग्रह", "रूपान्तरण", "मुक्ति"]
+    
+    - youtube_id: "vmoiZVxByrY"
+      title: "विश्वासको यात्रामा तपाईं कहाँ हुनुहुन्छ?"
+      speaker: "पास्टर राजेन्द्र थापा"
+      date: "जुलाई ७, २०२५"
+      duration: "४१:१५"
+      description: "जीवनका सबैभन्दा चुनौतीपूर्ण मौसमहरूमा परमेश्वरका प्रतिज्ञाहरू मार्फत आशा र बल पाउनुहोस्।"
+      tags: ["आशा", "प्रोत्साहन", "परीक्षाहरू"]
+    
+    - youtube_id: "kq65YbsFJQ4"
+      title: "बुबा दिवसको विशेष सन्देश"
+      speaker: "पास्टर रुबी थापा"
+      date: "जुलाई ७, २०२५"
+      duration: "४१:१५"
+      description: "जीवनका सबैभन्दा चुनौतीपूर्ण मौसमहरूमा परमेश्वरका प्रतिज्ञाहरू मार्फत आशा र बल पाउनुहोस्।"
+      tags: ["आशा", "प्रोत्साहन", "परीक्षाहरू"]
