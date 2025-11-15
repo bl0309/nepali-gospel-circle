@@ -237,4 +237,30 @@
         </div>
     </div>
 </section>
+
+<!-- Bible Section -->
+<section class="bible" id="bible">
+    <div class="container">
+        <div class="bible-card fade-in">
+            <div>
+                <h2>{{ i18n "bible_section_title" }}</h2>
+                <p>{{ i18n "bible_section_desc" }}</p>
+            </div>
+            <div class="bible-buttons">
+                {{ with .Site.Params.bible.nepali }}
+                <a href="{{ .url }}" class="bible-btn" target="_blank" rel="noopener">
+                    <i class="fas fa-book-open"></i>
+                    {{ i18n "bible_nepali_label" }}
+                </a>
+                {{ end }}
+                {{ with .Site.Params.bible.english }}
+                <a href="{{ .url }}" class="bible-btn" target="_blank" rel="noopener">
+                    <i class="fas fa-book-open"></i>
+                    {{ i18n "bible_english_label" }}
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
 {{ end }}

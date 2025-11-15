@@ -113,6 +113,15 @@ params:
     instagram: "https://www.instagram.com/nepaligospelcircle?igsh=MWl1bjNwMnl0bnh4dg=="
     youtube: "https://www.youtube.com/@NepaliGospelCircle"
 
+  # Bible quick links
+  bible:
+    nepali:
+      name: "Nepali Bible (NNRV)"
+      url: "https://www.bible.com/ne/bible/1483/GEN.1.NNRV"
+    english:
+      name: "English Bible (ASV)"
+      url: "https://www.bible.com/ne/bible/12/GEN.1.ASV"
+
 markup:
   goldmark:
     renderer:

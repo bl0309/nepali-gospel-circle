@@ -20,70 +20,144 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Enhanced Navbar with Glassmorphism Effect
-window.addEventListener('scroll', function () {
+function initNavbarState() {
     const navbar = document.getElementById('navbar');
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (!navbar) {
+        return;
     }
-});
+
+    const handleScroll = () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+}
 
 // Enhanced Mobile Menu with Animations
-const mobileMenu = document.querySelector('.mobile-menu');
-const navMenu = document.querySelector('.nav-menu');
+function initMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    if (!mobileMenu || !navMenu) {
+        return;
+    }
 
-mobileMenu.addEventListener('click', function () {
-    navMenu.classList.toggle('active');
-    this.classList.toggle('active');
+    const spans = mobileMenu.querySelectorAll('span');
 
-    // Animate hamburger menu
-    const spans = this.querySelectorAll('span');
-    spans.forEach((span, index) => {
-        if (this.classList.contains('active')) {
-            if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
-            if (index === 1) span.style.opacity = '0';
-            if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        } else {
-            span.style.transform = 'none';
-            span.style.opacity = '1';
-        }
-    });
-});
+    const updateHamburger = (isActive) => {
+        spans.forEach((span, index) => {
+            if (isActive) {
+                if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                if (index === 1) span.style.opacity = '0';
+                if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                span.style.transform = 'none';
+                span.style.opacity = '1';
+            }
+        });
+    };
 
-// Close menu when clicking navigation links
-const navLinks = document.querySelectorAll('.nav-menu a');
-navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        // Remove active class from menu and hamburger
-        navMenu.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        
-        // Reset hamburger animation
-        const spans = mobileMenu.querySelectorAll('span');
-        spans.forEach(span => {
-            span.style.transform = 'none';
-            span.style.opacity = '1';
+    const toggleMenu = () => {
+        navMenu.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        updateHamburger(mobileMenu.classList.contains('active'));
+    };
+
+    mobileMenu.addEventListener('click', toggleMenu);
+
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (!navMenu.classList.contains('active')) {
+                return;
+            }
+            navMenu.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            updateHamburger(false);
         });
     });
-});
+}
 
 // Smooth Scrolling with Enhanced Easing
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
+function initSmoothScroll() {
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    if (!anchors.length) {
+        return;
+    }
+
+    anchors.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const hash = this.getAttribute('href');
+            if (!hash || hash === '#') {
+                return;
+            }
+
+            const target = document.querySelector(hash);
+            if (!target) {
+                return;
+            }
+
+            e.preventDefault();
             const headerOffset = 80;
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
             // Custom smooth scroll with easing
             smoothScrollTo(offsetPosition, 1000);
+        });
+    });
+}
+
+// Language switcher interactions
+function initLanguageSwitcher() {
+    const languageToggle = document.getElementById('languageToggle');
+    const languageMenu = document.getElementById('languageMenu');
+    if (!languageToggle || !languageMenu) {
+        return;
+    }
+
+    languageToggle.setAttribute('aria-haspopup', 'true');
+    languageToggle.setAttribute('aria-expanded', 'false');
+
+    const closeMenu = () => {
+        languageMenu.classList.remove('active');
+        languageToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    languageToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        const isActive = languageMenu.classList.toggle('active');
+        languageToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    });
+
+    languageMenu.addEventListener('click', (event) => {
+        if (event.target.closest('.language-option')) {
+            closeMenu();
         }
     });
+
+    document.addEventListener('click', (event) => {
+        if (!languageMenu.contains(event.target) && !languageToggle.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
+            languageToggle.focus();
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initNavbarState();
+    initMobileMenu();
+    initSmoothScroll();
+    initLanguageSwitcher();
 });
 
 // Custom smooth scroll function with easing
@@ -728,7 +802,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Enhanced Floating Action Button
 function createFloatingActionButton() {
     const fab = document.createElement('a');
-    fab.className = 'fab';
+    fab.className = 'contact-fab';
     fab.href = '#contact';
     fab.innerHTML = '<i class="fas fa-phone"></i>';
     fab.title = 'Contact Us';

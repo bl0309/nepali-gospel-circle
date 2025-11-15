@@ -1,17 +1,5 @@
 upcoming:
-  en:
-    - date: "May 15, 2025"
-      title: "Annual Church Picnic"
-      description: "Join us for a day of fellowship, games, and traditional Nepali food at the local park. Bring your families for a wonderful time of community bonding."
-    
-    - date: "August 28, 2025"
-      title: "Youth Retreat Weekend"
-      description: "Our youth will spend a weekend in spiritual formation, team building, and fun activities designed to strengthen their faith and friendships."
-
-    - date: "September 09, 2025"
-      title: "Worship Workshop"
-      description: "Join us as we serve our local community through various outreach projects, demonstrating Christ's love in practical ways."
-    
+  en:    
     - date: "December 25, 2025"
       title: "Christmas Celebration"
       description: "We'll celebrate the Christmas with special worship, cultural performances, and traditional feast."
@@ -20,19 +8,7 @@ upcoming:
       title: "New Year's Eve Celebration"
       description: "We'll celebrate the New Year's Eve with special worship, reflections, and nepali food."
   
-  ne:
-    - date: "मे १५, २०२५"
-      title: "वार्षिक चर्च पिकनिक"
-      description: "स्थानीय पार्कमा संगति, खेलकुद, र परम्परागत नेपाली खानाको दिनको लागि हामीसँग सामेल हुनुहोस्। सामुदायिक एकताको अद्भुत समयको लागि आफ्ना परिवारहरूलाई ल्याउनुहोस्।"
-    
-    - date: "अगस्त २८, २०२५"
-      title: "युवा रिट्रीट सप्ताहांत"
-      description: "हाम्रा युवाहरूले आध्यात्मिक गठन, टोली निर्माण, र उनीहरूको विश्वास र मित्रताहरू बलियो बनाउन डिजाइन गरिएका रमाइलो गतिविधिहरूमा सप्ताहांत बिताउनेछन्।"
-
-    - date: "सेप्टेम्बर ०९, २०२५"
-      title: "आराधना कार्यशाला"
-      description: "विभिन्न आउटरिच परियोजनाहरू मार्फत हाम्रो स्थानीय समुदायको सेवा गर्दै ख्रीष्टको प्रेमलाई व्यावहारिक तरिकाहरूमा प्रदर्शन गर्न हामीसँग सामेल हुनुहोस्।"
-    
+  ne:    
     - date: "डिसेम्बर २५, २०२५"
       title: "क्रिसमस उत्सव"
       description: "हामी विशेष आराधना, सांस्कृतिक प्रदर्शन, र परम्परागत भोजसँग क्रिसमस मनाउनेछौं।"

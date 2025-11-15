@@ -75,3 +75,21 @@
 
 - id: connect_desc
   translation: "Follow us on social media to stay updated with our latest events and messages."
+
+- id: language_nepali
+  translation: "Nepal Flag"
+
+- id: language_english
+  translation: "USA Flag"
+
+- id: bible_section_title
+  translation: "Read the Bible Online"
+
+- id: bible_section_desc
+  translation: "Jump straight into Scripture anytime. Choose your preferred language below to open the Bible in a new tab."
+
+- id: bible_nepali_label
+  translation: "Nepali Bible (NNRV)"
+
+- id: bible_english_label
+  translation: "English Bible (ASV)"

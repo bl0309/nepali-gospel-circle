@@ -75,3 +75,21 @@
 
 - id: connect_desc
   translation: "हाम्रा नवीनतम सगंतिहरु​ र सन्देशहरूको साथ अद्यावधिक रहन सामाजिक सञ्जालमा हामीलाई फलो गर्नुहोस्।"
+
+- id: language_nepali
+  translation: "नेपाली झण्डा"
+
+- id: language_english
+  translation: "अमेरिकी झण्डा"
+
+- id: bible_section_title
+  translation: "अनलाइन बाइबल पढ्नुहोस्"
+
+- id: bible_section_desc
+  translation: "कुनै पनि समयमा परमेश्वरको वचन पढ्न यी लिंक प्रयोग गर्नुहोस्। तपाईंको मनपर्ने भाषालाई छनोट गर्नुहोस्।"
+
+- id: bible_nepali_label
+  translation: "नेपाली बाइबल (NNRV)"
+
+- id: bible_english_label
+  translation: "अंग्रेजी बाइबल (ASV)"
