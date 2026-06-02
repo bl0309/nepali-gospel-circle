@@ -13,20 +13,56 @@
 - id: learn_more
   translation: "Learn More"
 
+- id: welcome_home
+  translation: "Welcome Home"
+
+- id: you_belong_here
+  translation: "Whether you are new to faith or looking for a church family, you belong here."
+
+- id: plan_visit
+  translation: "Plan Your Visit"
+
+- id: watch_messages
+  translation: "Watch Messages"
+
 - id: about_ministry_title
   translation: "About Our Ministry"
+
+- id: about_kicker
+  translation: "Our Church"
 
 - id: about_ministry_desc
   translation: "We are a loving community of Nepali believers dedicated to growing in faith, fellowship, and service to our Lord Jesus Christ."
 
+- id: our_heart_kicker
+  translation: "Our Heart"
+
+- id: our_heart_title
+  translation: "A place to worship, grow, and belong."
+
+- id: our_heart_desc
+  translation: "Nepali Gospel Circle is built around the presence of Jesus, the truth of Scripture, and the warmth of family. Come as you are and take your next step with us."
+
 - id: worship_programs_title
   translation: "Worship Services & Programs"
+
+- id: services_kicker
+  translation: "Gatherings"
 
 - id: worship_programs_desc
   translation: "Join us for meaningful worship experiences and programs designed to strengthen our faith community."
 
 - id: recent_messages_title
   translation: "Recent Messages"
+
+- id: messages_kicker
+  translation: "Watch"
+
+- id: featured_message
+  translation: "Featured Message"
+
+- id: message_library
+  translation: "Message Library"
 
 - id: recent_messages_desc
   translation: "Watch our latest sermons and teachings that inspire and strengthen our faith journey."
@@ -37,11 +73,17 @@
 - id: upcoming_events_title
   translation: "Upcoming Events"
 
+- id: events_kicker
+  translation: "Calendar"
+
 - id: upcoming_events_desc
   translation: "Stay connected with our community through these upcoming events and activities."
 
 - id: meet_pastors_title
   translation: "Meet Our Pastors & Elders"
+
+- id: leadership_kicker
+  translation: "Leadership"
 
 - id: meet_pastors_desc
   translation: "Get to know the dedicated leaders who shepherd, teach, and care for our church family. Our pastors and elders are committed to guiding us in faith, prayer, and service as we grow together in Christ."
@@ -64,17 +106,68 @@
 - id: get_in_touch
   translation: "Get in Touch"
 
+- id: contact_kicker
+  translation: "Visit & Connect"
+
 - id: contact_description
   translation: "We'd love to hear from you and welcome you into our church family."
 
+- id: contact_invite_kicker
+  translation: "We'd Love to Connect"
+
+- id: contact_invite_title
+  translation: "You do not have to take the next step alone."
+
+- id: contact_invite_desc
+  translation: "Whether you are planning a visit, need prayer, or simply want to talk with someone from the church, reach out. Our team is ready to respond and help you feel at home."
+
+- id: contact_step_one_title
+  translation: "Reach Out"
+
+- id: contact_step_one_desc
+  translation: "Send a message or call when you are ready. You can ask a question, request prayer, or let us know you are planning to visit."
+
+- id: contact_step_two_title
+  translation: "We Respond"
+
+- id: contact_step_two_desc
+  translation: "Someone from the church will follow up with care, clarity, and a helpful next step."
+
+- id: contact_step_three_title
+  translation: "Feel at Home"
+
+- id: contact_step_three_desc
+  translation: "We will help you connect with worship, fellowship, and people who can walk with you."
+
 - id: contact_info_title
   translation: "Contact Information"
+
+- id: phone
+  translation: "Phone"
+
+- id: email
+  translation: "Email"
 
 - id: connect_title
   translation: "Connect With Us"
 
 - id: connect_desc
   translation: "Follow us on social media to stay updated with our latest events and messages."
+
+- id: footer_call_us
+  translation: "Call Us"
+
+- id: footer_email_us
+  translation: "Email Us"
+
+- id: footer_quick_links
+  translation: "Quick Links"
+
+- id: footer_get_directions
+  translation: "Get Directions"
+
+- id: footer_rights
+  translation: "All rights reserved."
 
 - id: language_nepali
   translation: "Nepal Flag"
@@ -84,6 +177,9 @@
 
 - id: bible_section_title
   translation: "Read the Bible Online"
+
+- id: scripture_kicker
+  translation: "Scripture"
 
 - id: bible_section_desc
   translation: "Jump straight into Scripture anytime. Choose your preferred language below to open the Bible in a new tab."

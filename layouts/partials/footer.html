@@ -1,19 +1,64 @@
 <footer class="footer">
-    <div class="container">
-        <a href="{{ .Site.BaseURL }}" class="footer-links">
-            <img src="/images/ngc_white.png" alt="{{ .Site.Title }}" style="height: 60px;">
-        </a>
-        <div class="footer-links">
-            {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}">{{ .Name }}</a>
-            {{ end }}
+    <div class="container footer-main">
+        <div class="footer-brand">
+            <a href="{{ .Site.Home.RelPermalink }}" class="footer-logo">
+                <img src="/images/ngc_white.png" alt="{{ .Site.Title }}">
+            </a>
+            <p>{{ .Site.Params.description }}</p>
+            <div class="footer-socials" aria-label="{{ i18n "connect_title" }}">
+                <a href="{{ .Site.Params.social.facebook }}" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="{{ .Site.Params.social.instagram }}" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="{{ .Site.Params.social.youtube }}" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-scripture" id="bible">
+                <p>{{ i18n "scripture_kicker" }}</p>
+                <div>
+                    {{ with .Site.Params.bible.nepali }}
+                    <a href="{{ .url }}" target="_blank" rel="noopener">{{ i18n "bible_nepali_label" }}</a>
+                    {{ end }}
+                    {{ with .Site.Params.bible.english }}
+                    <a href="{{ .url }}" target="_blank" rel="noopener">{{ i18n "bible_english_label" }}</a>
+                    {{ end }}
+                </div>
+            </div>
         </div>
-        <!-- <div class="social-links">
-            <a href="{{ .Site.Params.social.facebook }}"><i class="fab fa-facebook-f"></i></a>
-            <a href="{{ .Site.Params.social.instagram }}"><i class="fab fa-instagram"></i></a>
-            <a href="{{ .Site.Params.social.youtube }}"><i class="fab fa-youtube"></i></a>
-            <a href="{{ .Site.Params.social.twitter }}"><i class="fab fa-twitter"></i></a>
-        </div> -->
-        <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved. Built with love for our community.</p>
+
+        <nav class="footer-column" aria-label="{{ i18n "footer_quick_links" }}">
+            <h3>{{ i18n "footer_quick_links" }}</h3>
+            <div class="footer-links">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+            </div>
+        </nav>
+
+        <div class="footer-column">
+            <h3>{{ i18n "visit_us_title" }}</h3>
+            <address>
+                {{ .Site.Params.church.address.street }}<br>
+                {{ .Site.Params.church.address.city }}, {{ .Site.Params.church.address.state }} {{ .Site.Params.church.address.zip }}
+            </address>
+            <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query={{ .Site.Params.church.address.street | urlquery }}%20{{ .Site.Params.church.address.city | urlquery }}%20{{ .Site.Params.church.address.state | urlquery }}%20{{ .Site.Params.church.address.zip | urlquery }}" target="_blank" rel="noopener">
+                {{ i18n "footer_get_directions" }}
+            </a>
+        </div>
+
+        <div class="footer-column">
+            <h3>{{ i18n "service_times_title" }}</h3>
+            <ul class="footer-service-list">
+                <li><span>{{ i18n "sunday_service" }}</span>{{ .Site.Params.services.sunday_worship }}</li>
+                <li><span>{{ i18n "youth_meet" }}</span>{{ .Site.Params.services.youth_group }}</li>
+                <li><span>{{ i18n "home_fellowship" }}</span>{{ .Site.Params.services.home_gather }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container footer-bottom">
+        <p>&copy; {{ now.Year }} {{ .Site.Title }}. {{ i18n "footer_rights" }}</p>
+        <div>
+            <a href="{{ .Site.Home.RelPermalink }}#contact">{{ i18n "get_in_touch" }}</a>
+            <span aria-hidden="true">/</span>
+            <a href="{{ .Site.Home.RelPermalink }}#bible">{{ i18n "scripture_kicker" }}</a>
+        </div>
     </div>
 </footer>

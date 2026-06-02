@@ -13,20 +13,56 @@
 - id: learn_more
   translation: "जानकारीहरु"
 
+- id: welcome_home
+  translation: "घरमा स्वागत छ"
+
+- id: you_belong_here
+  translation: "तपाईं विश्वासमा नयाँ हुनुहुन्छ वा मण्डली परिवार खोज्दै हुनुहुन्छ भने पनि, तपाईं यहाँ स्वागत हुनुहुन्छ।"
+
+- id: plan_visit
+  translation: "भेट्ने योजना"
+
+- id: watch_messages
+  translation: "प्रचारहरु हेर्नुहोस्"
+
 - id: about_ministry_title
   translation: "हाम्रो सेवकाईको बारेमा"
+
+- id: about_kicker
+  translation: "हाम्रो मण्डली"
 
 - id: about_ministry_desc
   translation: "हामी नेपाली विश्वासीहरूको मायालु समुदाय हौं जो विश्वास, सङ्गति र हाम्रा प्रभु येशू ख्रीष्टको सेवामा बढ्न समर्पित छ।"
 
+- id: our_heart_kicker
+  translation: "हाम्रो हृदय"
+
+- id: our_heart_title
+  translation: "आराधना गर्न, बढ्न, र अपनत्व पाउन सकिने ठाउँ।"
+
+- id: our_heart_desc
+  translation: "नेपाली गस्पल सर्कल येशूको उपस्थिति, धर्मशास्त्रको सत्यता, र परिवारजस्तो न्यानोपन वरिपरि बनेको समुदाय हो। तपाईं जस्तो हुनुहुन्छ त्यस्तै आउनुहोस्।"
+
 - id: worship_programs_title
   translation: "आराधना सेवा र सगंतिहरु​"
+
+- id: services_kicker
+  translation: "भेलाहरू"
 
 - id: worship_programs_desc
   translation: "हाम्रो विश्वास समुदायलाई बलियो बनाउन डिजाइन गरिएका अर्थपूर्ण आराधना अनुभवहरू र सगंतिहरु​मा सामेल हुनुहोस्।"
 
 - id: recent_messages_title
   translation: "प्रचारहरु"
+
+- id: messages_kicker
+  translation: "हेर्नुहोस्"
+
+- id: featured_message
+  translation: "मुख्य प्रचार"
+
+- id: message_library
+  translation: "प्रचार संग्रह"
 
 - id: recent_messages_desc
   translation: "हाम्रा प्रचारहरु र शिक्षाहरू हेर्नुहोस् जसले हाम्रो विश्वासको यात्रालाई प्रेरणा र बल दिन्छ।"
@@ -37,11 +73,17 @@
 - id: upcoming_events_title
   translation: "आगामी कार्यक्रमहरू"
 
+- id: events_kicker
+  translation: "कार्यक्रम पात्रो"
+
 - id: upcoming_events_desc
   translation: "यी आगामी गतिविधिहरू मार्फत हाम्रो समुदायसँग जोडिएर रहनुहोस्।"
 
 - id: meet_pastors_title
   translation: "पास्टरहरू र एल्डरहरू"
+
+- id: leadership_kicker
+  translation: "अगुवाइ"
 
 - id: meet_pastors_desc
   translation: "हाम्रो मण्डली परिवारको हेरचाह, शिक्षा र सेवा गर्ने समर्पित आदरणिय​ अगुवाहरूलाई चिन्नुहोस्। हाम्रा पास्टरहरू र एल्डरहरू हामी ख्रीष्टमा सँगै बढ्दै जाँदा विश्वास, प्रार्थना र सेवामा हामीलाई मार्गदर्शन गर्न प्रतिबद्ध छन्।"
@@ -64,17 +106,68 @@
 - id: get_in_touch
   translation: "सम्पर्क गर्नुहोस्"
 
+- id: contact_kicker
+  translation: "भेट्नुहोस् र जोडिनुहोस्"
+
 - id: contact_description
   translation: "हामी तपाईंको तर्फबाट​ सुन्न र तपाईंलाई हाम्रो चर्च परिवारमा स्वागत गर्न चाहन्छौं।"
 
+- id: contact_invite_kicker
+  translation: "हामी जोडिन चाहन्छौं"
+
+- id: contact_invite_title
+  translation: "तपाईंले अर्को कदम एक्लै चाल्नुपर्दैन।"
+
+- id: contact_invite_desc
+  translation: "तपाईं भेट्न आउन चाहनुहुन्छ, प्रार्थना चाहनुहुन्छ, वा मण्डलीबाट कसैसँग कुरा गर्न चाहनुहुन्छ भने हामीलाई सम्पर्क गर्नुहोस्। हाम्रो टोली तपाईंलाई स्वागत गर्न र जवाफ दिन तयार छ।"
+
+- id: contact_step_one_title
+  translation: "सम्पर्क गर्नुहोस्"
+
+- id: contact_step_one_desc
+  translation: "तपाईं तयार हुँदा सन्देश पठाउनुहोस् वा फोन गर्नुहोस्। तपाईं प्रश्न सोध्न, प्रार्थना माग्न, वा भेट्न आउने कुरा बताउन सक्नुहुन्छ।"
+
+- id: contact_step_two_title
+  translation: "हामी जवाफ दिन्छौं"
+
+- id: contact_step_two_desc
+  translation: "मण्डलीबाट कसैले प्रेम, स्पष्टता, र उपयोगी अर्को कदमसहित तपाईंलाई सम्पर्क गर्नेछन्।"
+
+- id: contact_step_three_title
+  translation: "घरजस्तो महसुस गर्नुहोस्"
+
+- id: contact_step_three_desc
+  translation: "हामी तपाईंलाई आराधना, संगति, र तपाईंको साथमा हिँड्ने मानिसहरूसँग जोडिन मद्दत गर्नेछौं।"
+
 - id: contact_info_title
   translation: "सम्पर्क जानकारी"
+
+- id: phone
+  translation: "फोन"
+
+- id: email
+  translation: "इमेल"
 
 - id: connect_title
   translation: "हामीसँग जोडिनुहोस्"
 
 - id: connect_desc
   translation: "हाम्रा नवीनतम सगंतिहरु​ र सन्देशहरूको साथ अद्यावधिक रहन सामाजिक सञ्जालमा हामीलाई फलो गर्नुहोस्।"
+
+- id: footer_call_us
+  translation: "फोन गर्नुहोस्"
+
+- id: footer_email_us
+  translation: "इमेल गर्नुहोस्"
+
+- id: footer_quick_links
+  translation: "छिटो लिंकहरू"
+
+- id: footer_get_directions
+  translation: "दिशा हेर्नुहोस्"
+
+- id: footer_rights
+  translation: "सबै अधिकार सुरक्षित।"
 
 - id: language_nepali
   translation: "नेपाली झण्डा"
@@ -84,6 +177,9 @@
 
 - id: bible_section_title
   translation: "अनलाइन बाइबल पढ्नुहोस्"
+
+- id: scripture_kicker
+  translation: "धर्मशास्त्र"
 
 - id: bible_section_desc
   translation: "कुनै पनि समयमा परमेश्वरको वचन पढ्न यी लिंक प्रयोग गर्नुहोस्। तपाईंको मनपर्ने भाषालाई छनोट गर्नुहोस्।"

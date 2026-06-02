@@ -1,7 +1,7 @@
 <nav class="navbar" id="navbar">
     <div class="nav-container">
-        <a href="{{ .Site.BaseURL }}" class="logo">
-            <img src="/images/logo_home.png" alt="{{ .Site.Title }}" style="height: 50px;">
+        <a href="{{ .Site.Home.RelPermalink }}" class="logo">
+            <img src="/images/logo_home.png" alt="{{ .Site.Title }}">
         </a>
         <ul class="nav-menu">
             {{ range .Site.Menus.main }}

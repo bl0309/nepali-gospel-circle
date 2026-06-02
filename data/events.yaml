@@ -1,18 +1,26 @@
 upcoming:
-  en:    
-    - date: "December 25, 2025"
+  en: 
+    - date: "August 08, 2026"
+      title: "Worship Night"
+      description: "Join us for a focused evening of worship, prayer, and thanksgiving as we gather to seek God's presence together."
+
+    - date: "December 25, 2026"
       title: "Christmas Celebration"
       description: "We'll celebrate the Christmas with special worship, cultural performances, and traditional feast."
 
-    - date: "December 31, 2025"
+    - date: "December 31, 2026"
       title: "New Year's Eve Celebration"
       description: "We'll celebrate the New Year's Eve with special worship, reflections, and nepali food."
   
   ne:    
-    - date: "डिसेम्बर २५, २०२५"
+    - date: "अगस्ट ०८, २०२६"
+      title: "आराधना रात"
+      description: "परमेश्वरको उपस्थितिलाई सँगै खोज्दै आराधना, प्रार्थना, र धन्यवादको विशेष साँझमा हामीसँग सहभागी हुनुहोस्।"
+
+    - date: "डिसेम्बर २५, २०२६"
       title: "क्रिसमस उत्सव"
       description: "हामी विशेष आराधना, सांस्कृतिक प्रदर्शन, र परम्परागत भोजसँग क्रिसमस मनाउनेछौं।"
 
-    - date: "डिसेम्बर ३१, २०२५"
+    - date: "डिसेम्बर ३१, २०२६"
       title: "नयाँ वर्षको पूर्वसन्ध्या उत्सव"
       description: "हामी विशेष आराधना, चिन्तन, र नेपाली खानासँग नयाँ वर्षको पूर्वसन्ध्या मनाउनेछौं।"

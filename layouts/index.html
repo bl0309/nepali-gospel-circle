@@ -5,22 +5,24 @@
         <div class="hero-slide active" style="background-image: url('/images/home_img.jpg');"></div>
         <div class="hero-slide" style="background-image: url('/images/home_ps.jpg');"></div>
         <div class="hero-slide" style="background-image: url('/images/home_worship.jpg');"></div>
-        <div class="hero-slide" style="background-image: url('/images/leaders/elders.jpg');"></div>
     </div>
 
-    <!-- Hero Content -->
     <div class="hero-content">
-        <h2>{{ i18n "join_us_this" }}</h2>
-        <h1>{{ i18n "sunday" }}</h1>
-        <h1>{{ i18n "time_1pm" }}</h1>
+        <p class="hero-eyebrow">{{ i18n "join_us_this" }}</p>
+        <h1>{{ i18n "sunday" }}<span>{{ i18n "time_1pm" }}</span></h1>
         <p>{{ .Site.Params.description }}</p>
+        <div class="hero-service-details" aria-label="Service information">
+            <span><i class="fas fa-clock"></i>{{ .Site.Params.services.sunday_worship }}</span>
+            <span><i class="fas fa-map-marker-alt"></i>{{ .Site.Params.church.address.city }}, {{ .Site.Params.church.address.state }}</span>
+            <span><i class="fas fa-language"></i>नेपाली / English</span>
+        </div>
         <div class="cta-buttons">
             <a href="#services" class="btn btn-primary">
-                <i class="fas fa-play"></i>
+                <i class="fas fa-church"></i>
                 {{ i18n "join_worship" }}
             </a>
             <a href="#about" class="btn btn-secondary">
-                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
                 {{ i18n "learn_more" }}
             </a>
         </div>
@@ -31,7 +33,23 @@
         <span class="hero-dot active" onclick="currentSlide(1)"></span>
         <span class="hero-dot" onclick="currentSlide(2)"></span>
         <span class="hero-dot" onclick="currentSlide(3)"></span>
-        <span class="hero-dot" onclick="currentSlide(4)"></span>
+    </div>
+</section>
+
+<section class="visit-bar" aria-label="Sunday visit information">
+    <div class="container visit-bar-inner fade-in">
+        <div>
+            <p class="section-kicker">{{ i18n "welcome_home" }}</p>
+            <h2>{{ i18n "you_belong_here" }}</h2>
+        </div>
+        <div class="visit-bar-details">
+            <span><i class="fas fa-calendar-day"></i>{{ i18n "sunday_service" }} · {{ .Site.Params.services.sunday_worship }}</span>
+            <span><i class="fas fa-location-dot"></i>{{ .Site.Params.church.address.city }}, {{ .Site.Params.church.address.state }}</span>
+        </div>
+        <div class="visit-bar-actions">
+            <a href="#contact" class="btn btn-dark">{{ i18n "plan_visit" }}</a>
+            <a href="#messages" class="btn btn-outline-dark">{{ i18n "watch_messages" }}</a>
+        </div>
     </div>
 </section>
 
@@ -39,8 +57,18 @@
 <section class="about" id="about">
     <div class="container">
         <div class="section-header">
+            <p class="section-kicker">{{ i18n "about_kicker" }}</p>
             <h2>{{ i18n "about_ministry_title" }}</h2>
             <p>{{ i18n "about_ministry_desc" }}</p>
+        </div>
+        <div class="about-story fade-in">
+            <div class="about-story-image" style="background-image: url('/images/home_worship.jpg');"></div>
+            <div class="about-story-content">
+                <p class="section-kicker">{{ i18n "our_heart_kicker" }}</p>
+                <h3>{{ i18n "our_heart_title" }}</h3>
+                <p>{{ i18n "our_heart_desc" }}</p>
+                <a href="#contact" class="btn btn-outline-dark">{{ i18n "plan_visit" }}</a>
+            </div>
         </div>
         <div class="about-grid">
             {{ $lang := .Site.Language.Lang }}
@@ -59,6 +87,7 @@
 <section class="services" id="services">
     <div class="container">
         <div class="section-header">
+            <p class="section-kicker">{{ i18n "services_kicker" }}</p>
             <h2>{{ i18n "worship_programs_title" }}</h2>
             <p>{{ i18n "worship_programs_desc" }}</p>
         </div>
@@ -82,22 +111,24 @@
 <section class="messages" id="messages">
     <div class="container">
         <div class="section-header">
+            <p class="section-kicker">{{ i18n "messages_kicker" }}</p>
             <h2>{{ i18n "recent_messages_title" }}</h2>
             <p>{{ i18n "recent_messages_desc" }}</p>
         </div>
-        <div class="messages-grid">
-            {{ $lang := .Site.Language.Lang }}
-            {{ range index .Site.Data.messages.recent $lang }}
-            <div class="message-card fade-in" data-video-id="{{ .youtube_id }}">
-                <div class="message-thumbnail">
-                    <img src="https://img.youtube.com/vi/{{ .youtube_id }}/maxresdefault.jpg" alt="{{ .title }}"
-                        loading="lazy">
-                    <div class="play-button">
+        {{ $lang := .Site.Language.Lang }}
+        {{ $messages := index .Site.Data.messages.recent $lang }}
+        <div class="messages-showcase">
+            {{ with index $messages 0 }}
+            <div class="message-card message-feature fade-in" data-video-id="{{ .youtube_id }}">
+                <div class="message-feature-media">
+                    <img src="https://img.youtube.com/vi/{{ .youtube_id }}/maxresdefault.jpg" alt="{{ .title }}" loading="lazy">
+                    <div class="play-button play-button-large">
                         <i class="fas fa-play"></i>
                     </div>
                     <div class="message-duration">{{ .duration }}</div>
                 </div>
-                <div class="message-content">
+                <div class="message-feature-content">
+                    <p class="section-kicker">{{ i18n "featured_message" }}</p>
                     <div class="message-date">{{ .date }}</div>
                     <h3>{{ .title }}</h3>
                     <p class="message-speaker">
@@ -113,6 +144,30 @@
                 </div>
             </div>
             {{ end }}
+
+            <div class="message-queue fade-in">
+                <div class="message-queue-header">
+                    <span>{{ i18n "message_library" }}</span>
+                    <i class="fas fa-list"></i>
+                </div>
+                {{ range after 1 $messages }}
+                <div class="message-card message-row" data-video-id="{{ .youtube_id }}">
+                    <div class="message-row-thumb">
+                        <img src="https://img.youtube.com/vi/{{ .youtube_id }}/mqdefault.jpg" alt="{{ .title }}" loading="lazy">
+                        <span><i class="fas fa-play"></i></span>
+                    </div>
+                    <div class="message-row-content">
+                        <div class="message-date">{{ .date }}</div>
+                        <h3>{{ .title }}</h3>
+                        <p class="message-speaker">
+                            <i class="fas fa-user"></i>
+                            {{ .speaker }}
+                        </p>
+                    </div>
+                    <div class="message-row-duration">{{ .duration }}</div>
+                </div>
+                {{ end }}
+            </div>
         </div>
         <div class="messages-cta">
             <a href="{{ .Site.Params.youtube_channel }}" class="btn btn-primary" target="_blank">
@@ -127,6 +182,7 @@
 <section class="events" id="events">
     <div class="container">
         <div class="section-header">
+            <p class="section-kicker">{{ i18n "events_kicker" }}</p>
             <h2>{{ i18n "upcoming_events_title" }}</h2>
             <p>{{ i18n "upcoming_events_desc" }}</p>
         </div>
@@ -134,10 +190,20 @@
             <div class="events-list">
                 {{ $lang := .Site.Language.Lang }}
                 {{ range index .Site.Data.events.upcoming $lang }}
+                {{ $dateParts := split .date " " }}
+                {{ $eventMonth := index $dateParts 0 }}
+                {{ $eventDay := replace (index $dateParts 1) "," "" }}
+                {{ $eventYear := index $dateParts 2 }}
                 <div class="event-item fade-in">
-                    <div class="event-date">{{ .date }}</div>
-                    <h3>{{ .title }}</h3>
-                    <p>{{ .description }}</p>
+                    <div class="event-date-card" aria-label="{{ .date }}">
+                        <span class="event-month">{{ $eventMonth }}</span>
+                        <span class="event-day">{{ $eventDay }}</span>
+                        <span class="event-year">{{ $eventYear }}</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>{{ .title }}</h3>
+                        <p>{{ .description }}</p>
+                    </div>
                 </div>
                 {{ end }}
             </div>
@@ -149,12 +215,13 @@
 <div class="leadership" id="leadership">
     <div class="container">
         <div class="section-header">
+            <p class="section-kicker">{{ i18n "leadership_kicker" }}</p>
             <h2>{{ i18n "meet_pastors_title" }}</h2>
             <p>{{ i18n "meet_pastors_desc" }}</p>
         </div>
         <div class="leadership-grid">
             {{ $lang := .Site.Language.Lang }}
-            {{ range first 2 (index .Site.Data.team.team $lang) }}
+            {{ range first 1 (index .Site.Data.team.team $lang) }}
             <div class="team-card fade-in">
                 <img src="{{ .image }}" alt="{{ .name }}" class="team-photo">
                 <h3>{{ .name }}</h3>
@@ -167,7 +234,7 @@
         <!-- Elders Full Width Card -->
         {{ $lang := .Site.Language.Lang }}
         {{ $teamData := index .Site.Data.team.team $lang }}
-        {{ $elders := index $teamData 2 }}
+        {{ $elders := index $teamData 1 }}
         <div class="elder-card fade-in">
             <img src="{{ $elders.image }}" alt="{{ $elders.name }}" class="elder-photo">
             <div class="elder-content">
@@ -183,82 +250,42 @@
 <section class="contact" id="contact">
     <div class="container">
         <div class="section-header">
+            <p class="section-kicker">{{ i18n "contact_kicker" }}</p>
             <h2 style="color: white;">{{ i18n "get_in_touch" }}</h2>
             <p style="color: rgba(255,255,255,0.8);">{{ i18n "contact_description" }}</p>
         </div>
-        <div class="contact-grid">
-            <div class="fade-in">
-                <h3>{{ i18n "visit_us_title" }}</h3>
-                <div class="contact-info">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong>{{ .Site.Params.church.name }}</strong><br>
-                        {{ .Site.Params.church.address.street }}<br>
-                        {{ .Site.Params.church.address.city }}, {{ .Site.Params.church.address.state }} {{
-                        .Site.Params.church.address.zip }}
-                    </div>
-                </div>
-                <div class="contact-info">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <strong>{{ i18n "service_times_title" }}</strong><br>
-                        {{ i18n "sunday_service" }} — {{ .Site.Params.services.sunday_worship }}<br>
-                        {{ i18n "youth_meet" }} — {{ .Site.Params.services.youth_group }}<br>
-                        {{ i18n "home_fellowship" }} — {{ .Site.Params.services.home_gather }}
-                    </div>
-                </div>
+        <div class="contact-invitation fade-in">
+            <div>
+                <p class="section-kicker">{{ i18n "contact_invite_kicker" }}</p>
+                <h3>{{ i18n "contact_invite_title" }}</h3>
+                <p>{{ i18n "contact_invite_desc" }}</p>
             </div>
-            <div class="fade-in">
-                <h3>{{ i18n "contact_info_title" }}</h3>
-                <div class="contact-info">
+            <div class="contact-actions">
+                <a href="tel:{{ .Site.Params.church.phone }}" class="btn btn-primary">
                     <i class="fas fa-phone"></i>
-                    <div>
-                        <strong>{{ i18n "phone" }}</strong><br>
-                        {{ .Site.Params.church.phone }}
-                    </div>
-                </div>
-                <div class="contact-info">
+                    {{ i18n "footer_call_us" }}
+                </a>
+                <a href="mailto:{{ .Site.Params.church.email }}" class="btn btn-secondary">
                     <i class="fas fa-envelope"></i>
-                    <div>
-                        <strong>{{ i18n "email" }}</strong><br>
-                        {{ .Site.Params.church.email }}
-                    </div>
-                </div>
-            </div>
-            <div class="fade-in">
-                <h3>{{ i18n "connect_title" }}</h3>
-                <p style="margin-bottom: 2rem;">{{ i18n "connect_desc" }}</p>
-                <div class="social-links">
-                    <a href="{{ .Site.Params.social.facebook }}"><i class="fab fa-facebook-f"></i></a>
-                    <a href="{{ .Site.Params.social.instagram }}"><i class="fab fa-instagram"></i></a>
-                    <a href="{{ .Site.Params.social.youtube }}"><i class="fab fa-youtube"></i></a>
-                </div>
+                    {{ i18n "footer_email_us" }}
+                </a>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Bible Section -->
-<section class="bible" id="bible">
-    <div class="container">
-        <div class="bible-card fade-in">
+        <div class="contact-steps fade-in">
             <div>
-                <h2>{{ i18n "bible_section_title" }}</h2>
-                <p>{{ i18n "bible_section_desc" }}</p>
+                <span>01</span>
+                <h3>{{ i18n "contact_step_one_title" }}</h3>
+                <p>{{ i18n "contact_step_one_desc" }}</p>
             </div>
-            <div class="bible-buttons">
-                {{ with .Site.Params.bible.nepali }}
-                <a href="{{ .url }}" class="bible-btn" target="_blank" rel="noopener">
-                    <i class="fas fa-book-open"></i>
-                    {{ i18n "bible_nepali_label" }}
-                </a>
-                {{ end }}
-                {{ with .Site.Params.bible.english }}
-                <a href="{{ .url }}" class="bible-btn" target="_blank" rel="noopener">
-                    <i class="fas fa-book-open"></i>
-                    {{ i18n "bible_english_label" }}
-                </a>
-                {{ end }}
+            <div>
+                <span>02</span>
+                <h3>{{ i18n "contact_step_two_title" }}</h3>
+                <p>{{ i18n "contact_step_two_desc" }}</p>
+            </div>
+            <div>
+                <span>03</span>
+                <h3>{{ i18n "contact_step_three_title" }}</h3>
+                <p>{{ i18n "contact_step_three_desc" }}</p>
             </div>
         </div>
     </div>
