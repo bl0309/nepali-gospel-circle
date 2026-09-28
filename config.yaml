@@ -95,10 +95,11 @@ params:
     phone: "(972) 670-7183"
     email: "ngospelc@gmail.com"
     address: 
-      street: "4401 N State Highway 161"
-      city: "Irving"
-      state: "Texas"
-      zip: "75038"
+      street: "1903 Central Drive"
+      suite: "Suite 202"
+      city: "Bedford"
+      state: "TX"
+      zip: "76021"
       country: "United States"
   
   # Service Times

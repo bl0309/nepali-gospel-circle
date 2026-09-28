@@ -36,9 +36,9 @@
             <h3>{{ i18n "visit_us_title" }}</h3>
             <address>
                 {{ .Site.Params.church.address.street }}<br>
-                {{ .Site.Params.church.address.city }}, {{ .Site.Params.church.address.state }} {{ .Site.Params.church.address.zip }}
+                {{ with .Site.Params.church.address.suite }}{{ . }}, {{ end }}{{ .Site.Params.church.address.city }}, {{ .Site.Params.church.address.state }}{{ with .Site.Params.church.address.zip }} {{ . }}{{ end }}
             </address>
-            <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query={{ .Site.Params.church.address.street | urlquery }}%20{{ .Site.Params.church.address.city | urlquery }}%20{{ .Site.Params.church.address.state | urlquery }}%20{{ .Site.Params.church.address.zip | urlquery }}" target="_blank" rel="noopener">
+            <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query={{ .Site.Params.church.address.street | urlquery }}{{ with .Site.Params.church.address.suite }}%20{{ . | urlquery }}{{ end }}%20{{ .Site.Params.church.address.city | urlquery }}%20{{ .Site.Params.church.address.state | urlquery }}{{ with .Site.Params.church.address.zip }}%20{{ . | urlquery }}{{ end }}" target="_blank" rel="noopener">
                 {{ i18n "footer_get_directions" }}
             </a>
         </div>
