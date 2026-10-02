@@ -5,6 +5,7 @@
 [build.environment]
   HUGO_VERSION = "0.128.0"
   HUGO_ENV = "production"
+  NODE_VERSION = "22"
 
 [context.production.environment]
   HUGO_ENV = "production"
@@ -48,3 +49,36 @@
   from = "/home"
   to = "/"
   status = 301
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+[[headers]]
+  for = "/js/admin.js"
+  [headers.values]
+    cache-control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/js/signup.js"
+  [headers.values]
+    cache-control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/css/admin.css"
+  [headers.values]
+    cache-control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"
+    cache-control = "no-store"
+
+[[headers]]
+  for = "/text-updates/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"

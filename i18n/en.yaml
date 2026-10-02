@@ -189,3 +189,5 @@
 
 - id: bible_english_label
   translation: "English Bible (ASV)"
+- id: text_updates
+  translation: "Church Text Updates"

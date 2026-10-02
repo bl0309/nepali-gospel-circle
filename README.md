@@ -90,3 +90,6 @@ Feel free to open issues or PRs with improvements. Review `static/js/main.js` fo
 
 
 Author: Bikram Lamsal
+## Church messaging
+
+The admin-only SMS tool lives at `/admin/` and uses Netlify Functions, Supabase, and Twilio. Setup, first admin creation, environment variables, and the safe test checklist are in [docs/ngc-messaging-setup.md](docs/ngc-messaging-setup.md).

@@ -189,3 +189,5 @@
 
 - id: bible_english_label
   translation: "अंग्रेजी बाइबल (ASV)"
+- id: text_updates
+  translation: "मण्डलीका सन्देशहरू"
